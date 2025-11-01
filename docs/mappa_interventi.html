@@ -1,0 +1,4894 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+<style>
+  html, body, #map { height: 100%; margin: 0; padding: 0; }
+  @media (max-width: 600px) {
+    .leaflet-control-layers {
+      font-size: 12px !important;
+      background: rgba(255,255,255,0.9);
+    }
+  }
+</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_140a804e9459d652c52b894517a64b87 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="
+position: fixed;
+bottom: 25px;
+right: 10px;
+background: white;
+border: 1px solid #444;
+padding: 10px;
+font-size:13px;
+line-height:1.4;
+max-width: 200px;
+box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+z-index:9999;">
+<b style='display:block;text-align:center;margin-bottom:6px;'>Legenda</b>
+<div><span style='background:blue;width:12px;height:12px;display:inline-block;margin-right:6px;border:1px solid #000;'></span>In progettazione</div>
+<div><span style='background:orange;width:12px;height:12px;display:inline-block;margin-right:6px;border:1px solid #000;'></span>In esecuzione</div>
+<div><span style='background:green;width:12px;height:12px;display:inline-block;margin-right:6px;border:1px solid #000;'></span>Concluso</div>
+<div><span style='background:gray;width:12px;height:12px;display:inline-block;margin-right:6px;border:1px solid #000;'></span>Altro</div>
+<p style='font-size:11px;margin-top:6px;text-align:center;'>Tocca i marker per aprire le schede</p>
+</div>
+    
+            <div class="folium-map" id="map_140a804e9459d652c52b894517a64b87" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_140a804e9459d652c52b894517a64b87 = L.map(
+                "map_140a804e9459d652c52b894517a64b87",
+                {
+                    center: [46.35483322768598, 11.249488140220155],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e01539cf258589506d6127e2913b7036 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_e01539cf258589506d6127e2913b7036.addTo(map_140a804e9459d652c52b894517a64b87);
+        
+    
+            var feature_group_fd698fe77c8983137cf294a5d27095de = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_aa0dab99db9922b9898fa93ebd38f016 = L.marker(
+                [46.88484235791036, 12.15315006609745],
+                {
+}
+            ).addTo(feature_group_fd698fe77c8983137cf294a5d27095de);
+        
+    
+            var icon_9f35c3935329a53a4617e89548c6d0df = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7b599c7322b1bb7f188ccff1d753f992 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_78b95d0101dd688e81f327d2391a31a7 = $(`<div id="html_78b95d0101dd688e81f327d2391a31a7" style="width: 100.0%; height: 100.0%;">     <b>Nuovo impianto di innevamento dello stadio del Biathlon</b><br>     <b>Fase:</b> concluso<br>     <b>Aggiudicatario:</b> Ati: Technoalpin S.p.A. - Karl Wieser OHG<br>     <b>Totale:</b> € 7,553,746.89<br>     <a href='website/1.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_7b599c7322b1bb7f188ccff1d753f992.setContent(html_78b95d0101dd688e81f327d2391a31a7);
+            
+        
+
+        marker_aa0dab99db9922b9898fa93ebd38f016.bindPopup(popup_7b599c7322b1bb7f188ccff1d753f992)
+        ;
+
+        
+    
+    
+            marker_aa0dab99db9922b9898fa93ebd38f016.bindTooltip(
+                `<div>
+                     Nuovo impianto di innevamento dello stadio del Biathlon
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aa0dab99db9922b9898fa93ebd38f016.setIcon(icon_9f35c3935329a53a4617e89548c6d0df);
+            
+    
+            var marker_0de39987e839b12e572ebd2de6cfe4c4 = L.marker(
+                [46.32964636625356, 11.60410585697533],
+                {
+}
+            ).addTo(feature_group_fd698fe77c8983137cf294a5d27095de);
+        
+    
+            var icon_490e8b92ff42045644a5b0f14e47e95e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_95c633b3071a38440e98a88b7dbd0f4e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_fd61911b150a49b708ff644912732a35 = $(`<div id="html_fd61911b150a49b708ff644912732a35" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione trampolini, sala atleti, torre giudici e tribuna allenatori - UMAF 0 Demolizioni e viabilità</b><br>     <b>Fase:</b> concluso<br>     <b>Aggiudicatario:</b> Ati: Zugliani s.r.l. - Zampedri<br>     <b>Totale:</b> € 2,583,134.4<br>     <a href='website/1.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_95c633b3071a38440e98a88b7dbd0f4e.setContent(html_fd61911b150a49b708ff644912732a35);
+            
+        
+
+        marker_0de39987e839b12e572ebd2de6cfe4c4.bindPopup(popup_95c633b3071a38440e98a88b7dbd0f4e)
+        ;
+
+        
+    
+    
+            marker_0de39987e839b12e572ebd2de6cfe4c4.bindTooltip(
+                `<div>
+                     Riqualificazione trampolini, sala atleti, torre giudici e tribuna allenatori - UMAF 0 Demolizioni e viabilità
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0de39987e839b12e572ebd2de6cfe4c4.setIcon(icon_490e8b92ff42045644a5b0f14e47e95e);
+            
+    
+            var marker_735cee2956dc9867bdbd31ee25039b72 = L.marker(
+                [46.30885081238575, 11.59954478134314],
+                {
+}
+            ).addTo(feature_group_fd698fe77c8983137cf294a5d27095de);
+        
+    
+            var icon_b4b724635ae4f3690bfdfa2f8ba6557d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_378fc55adec04e132f4c65e8f53ce3cd = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e1edaaae7afd4accdd5ef9b36b169b14 = $(`<div id="html_e1edaaae7afd4accdd5ef9b36b169b14" style="width: 100.0%; height: 100.0%;">     <b>Villaggio Olimpico Predazzo presso la Guardia di Finanza Lotto Funzionale 4 -  Padiglione Nicolaucich: organizzazione degli spazi sottotetto</b><br>     <b>Fase:</b> concluso<br>     <b>Aggiudicatario:</b> Edil Martinol s.r.l.<br>     <b>Totale:</b> € 1,386,714.02<br>     <a href='website/21.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_378fc55adec04e132f4c65e8f53ce3cd.setContent(html_e1edaaae7afd4accdd5ef9b36b169b14);
+            
+        
+
+        marker_735cee2956dc9867bdbd31ee25039b72.bindPopup(popup_378fc55adec04e132f4c65e8f53ce3cd)
+        ;
+
+        
+    
+    
+            marker_735cee2956dc9867bdbd31ee25039b72.bindTooltip(
+                `<div>
+                     Villaggio Olimpico Predazzo presso la Guardia di Finanza Lotto Funzionale 4 -  Padiglione Nicolaucich: organizzazione degli spazi sottotetto
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_735cee2956dc9867bdbd31ee25039b72.setIcon(icon_b4b724635ae4f3690bfdfa2f8ba6557d);
+            
+    
+            var marker_8c3ae27022b7995fc5a46c17e23c365f = L.marker(
+                [46.53313735184508, 10.15218468813822],
+                {
+}
+            ).addTo(feature_group_fd698fe77c8983137cf294a5d27095de);
+        
+    
+            var icon_c7ca74f2c4c72f4166e8dc51763a24dd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e1f9c65d0b8ca3d6f59b4ad2f6b4cd76 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_fdd09ecdfd771caa78d82ea4c19909ed = $(`<div id="html_fdd09ecdfd771caa78d82ea4c19909ed" style="width: 100.0%; height: 100.0%;">     <b>Proposta di partenariato pubblico privato per il nuovo impianto a fune con realizzazione di stazione intermedia</b><br>     <b>Fase:</b> concluso<br>     <b>Aggiudicatario:</b> RTI Doppelmayr Italia - Mottolino S.p.A. - F.lli Trentini<br>     <b>Totale:</b> € 30,055,505.0<br>     <a href='website/610.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_e1f9c65d0b8ca3d6f59b4ad2f6b4cd76.setContent(html_fdd09ecdfd771caa78d82ea4c19909ed);
+            
+        
+
+        marker_8c3ae27022b7995fc5a46c17e23c365f.bindPopup(popup_e1f9c65d0b8ca3d6f59b4ad2f6b4cd76)
+        ;
+
+        
+    
+    
+            marker_8c3ae27022b7995fc5a46c17e23c365f.bindTooltip(
+                `<div>
+                     Proposta di partenariato pubblico privato per il nuovo impianto a fune con realizzazione di stazione intermedia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8c3ae27022b7995fc5a46c17e23c365f.setIcon(icon_c7ca74f2c4c72f4166e8dc51763a24dd);
+            
+    
+            var marker_3036f9913272a584473fa16538374328 = L.marker(
+                [46.5215249983318, 10.120488249370938],
+                {
+}
+            ).addTo(feature_group_fd698fe77c8983137cf294a5d27095de);
+        
+    
+            var icon_58954edbe34c1b7cd0a2ed63dba3de6a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_475f304de779722aa5cb27c3bcb98c7e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ca52545b812e3b02b569c3b84e5de78e = $(`<div id="html_ca52545b812e3b02b569c3b84e5de78e" style="width: 100.0%; height: 100.0%;">     <b>Venue di gara "Livigno Aerials Moguls" a Livigno (SO): lavori permanenti per i tracciati di gara, sistemazione delle skiweg e dell'impianto di risalita</b><br>     <b>Fase:</b> concluso<br>     <b>Aggiudicatario:</b> RTI IMPRESA RIGAMONTI SPA - LIVIGNO SCAVI SRL<br>     <b>Totale:</b> € 4,794,200.0<br>     <a href='website/1597.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_475f304de779722aa5cb27c3bcb98c7e.setContent(html_ca52545b812e3b02b569c3b84e5de78e);
+            
+        
+
+        marker_3036f9913272a584473fa16538374328.bindPopup(popup_475f304de779722aa5cb27c3bcb98c7e)
+        ;
+
+        
+    
+    
+            marker_3036f9913272a584473fa16538374328.bindTooltip(
+                `<div>
+                     Venue di gara "Livigno Aerials Moguls" a Livigno (SO): lavori permanenti per i tracciati di gara, sistemazione delle skiweg e dell'impianto di risalita
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3036f9913272a584473fa16538374328.setIcon(icon_58954edbe34c1b7cd0a2ed63dba3de6a);
+            
+    
+            var marker_8c87d4fa8715d07f67aa3afa56faf71f = L.marker(
+                [46.28214815184704, 11.52385227951603],
+                {
+}
+            ).addTo(feature_group_fd698fe77c8983137cf294a5d27095de);
+        
+    
+            var icon_a883493a78187751c3c5b302b645083a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d8bbffd841e341f64e50e12ad7e0c380 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8e4e70fb852cc263619edcbe90ed4212 = $(`<div id="html_8e4e70fb852cc263619edcbe90ed4212" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione Stadio per lo sci di Fondo Lotto Funzionale 1A - Nuovo volume interrato: per gli spogliatoi atleti ed i locali tecnici</b><br>     <b>Fase:</b> concluso<br>     <b>Aggiudicatario:</b> Ati: C.T.S. s.r.l. - Impresa Edile Volcan Severno s.r.l. <br>     <b>Totale:</b> € 5,131,170.0<br>     <a href='website/75025.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_d8bbffd841e341f64e50e12ad7e0c380.setContent(html_8e4e70fb852cc263619edcbe90ed4212);
+            
+        
+
+        marker_8c87d4fa8715d07f67aa3afa56faf71f.bindPopup(popup_d8bbffd841e341f64e50e12ad7e0c380)
+        ;
+
+        
+    
+    
+            marker_8c87d4fa8715d07f67aa3afa56faf71f.bindTooltip(
+                `<div>
+                     Riqualificazione Stadio per lo sci di Fondo Lotto Funzionale 1A - Nuovo volume interrato: per gli spogliatoi atleti ed i locali tecnici
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8c87d4fa8715d07f67aa3afa56faf71f.setIcon(icon_a883493a78187751c3c5b302b645083a);
+            
+    
+            var marker_0839f3cbb807677d9814cc5082218b3e = L.marker(
+                [46.54521183249737, 12.12322113148918],
+                {
+}
+            ).addTo(feature_group_fd698fe77c8983137cf294a5d27095de);
+        
+    
+            var icon_3e5842c35761e9cfefc00d05696cfaa8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8982f3592856c81f618c0d37f57f6da2 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a9ce592528683a928de987cfa88fbf68 = $(`<div id="html_a9ce592528683a928de987cfa88fbf68" style="width: 100.0%; height: 100.0%;">     <b>CORTINA SLIDING CENTRE - LOTTO 1 Strip out e interventi preparatori per la Pista “Eugenio Monti”</b><br>     <b>Fase:</b> concluso<br>     <b>Aggiudicatario:</b> NOLDEM SPA ora UNICA SPA (atto di fusione del 06.03.2023)<br>     <b>Totale:</b> € 3,812,700.0<br>     <a href='website/2178309.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_8982f3592856c81f618c0d37f57f6da2.setContent(html_a9ce592528683a928de987cfa88fbf68);
+            
+        
+
+        marker_0839f3cbb807677d9814cc5082218b3e.bindPopup(popup_8982f3592856c81f618c0d37f57f6da2)
+        ;
+
+        
+    
+    
+            marker_0839f3cbb807677d9814cc5082218b3e.bindTooltip(
+                `<div>
+                     CORTINA SLIDING CENTRE - LOTTO 1 Strip out e interventi preparatori per la Pista “Eugenio Monti”
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0839f3cbb807677d9814cc5082218b3e.setIcon(icon_3e5842c35761e9cfefc00d05696cfaa8);
+            
+    
+            var marker_ae8728b6d31ae7103983e90b0ec4896b = L.marker(
+                [46.52352588837303, 12.132572202162878],
+                {
+}
+            ).addTo(feature_group_fd698fe77c8983137cf294a5d27095de);
+        
+    
+            var icon_8e4c8b29672d22990cf5e8676d6110c6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c11e9ced94edda10691b37b344b16aaf = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_397d374b611dd763b6e05fa81c895f1a = $(`<div id="html_397d374b611dd763b6e05fa81c895f1a" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione di immobili residenziali pubblici nel Comune di Cortina d'Ampezzo (BL).</b><br>     <b>Fase:</b> concluso<br>     <b>Aggiudicatario:</b> Fontana S.r.l.<br>     <b>Totale:</b> € 500,000.0<br>     <a href='website/433494437.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_c11e9ced94edda10691b37b344b16aaf.setContent(html_397d374b611dd763b6e05fa81c895f1a);
+            
+        
+
+        marker_ae8728b6d31ae7103983e90b0ec4896b.bindPopup(popup_c11e9ced94edda10691b37b344b16aaf)
+        ;
+
+        
+    
+    
+            marker_ae8728b6d31ae7103983e90b0ec4896b.bindTooltip(
+                `<div>
+                     Riqualificazione di immobili residenziali pubblici nel Comune di Cortina d'Ampezzo (BL).
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ae8728b6d31ae7103983e90b0ec4896b.setIcon(icon_8e4c8b29672d22990cf5e8676d6110c6);
+            
+    
+            var marker_7da51c84889fc755e6a6abfba17a79c6 = L.marker(
+                [46.88484235791036, 12.15315006609745],
+                {
+}
+            ).addTo(feature_group_fd698fe77c8983137cf294a5d27095de);
+        
+    
+            var icon_3044661fce1543d5896baa33eb40dd82 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2eaff412f7e09234e0565f3f0c3f028b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3a6747ec647a9664ddf3cc94980dd470 = $(`<div id="html_3a6747ec647a9664ddf3cc94980dd470" style="width: 100.0%; height: 100.0%;">     <b>Infrastrutture - Approvvigionamento elettrico Cabine BT/MT</b><br>     <b>Fase:</b> concluso<br>     <b>Aggiudicatario:</b> PLONER srl<br>     <b>Totale:</b> € 4,109,600.0<br>     <a href='website/32951280099.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_2eaff412f7e09234e0565f3f0c3f028b.setContent(html_3a6747ec647a9664ddf3cc94980dd470);
+            
+        
+
+        marker_7da51c84889fc755e6a6abfba17a79c6.bindPopup(popup_2eaff412f7e09234e0565f3f0c3f028b)
+        ;
+
+        
+    
+    
+            marker_7da51c84889fc755e6a6abfba17a79c6.bindTooltip(
+                `<div>
+                     Infrastrutture - Approvvigionamento elettrico Cabine BT/MT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7da51c84889fc755e6a6abfba17a79c6.setIcon(icon_3044661fce1543d5896baa33eb40dd82);
+            
+    
+            feature_group_fd698fe77c8983137cf294a5d27095de.addTo(map_140a804e9459d652c52b894517a64b87);
+        
+    
+            var feature_group_1e76c13df48ca460f55eba4173f2fd62 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_03b89a3e66404b922fcd1c9b7a02edd2 = L.marker(
+                [46.32964636625356, 11.60410585697533],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_33bb65cfba67ac721e7f02029dc98396 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f95e3d62961eec0dffad39b90503a0d7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_66612971b55350b556a6d60d223c60c7 = $(`<div id="html_66612971b55350b556a6d60d223c60c7" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione trampolini, sala atleti, torre giudici e tribuna allenatori - UMAF 1 Opere sportive principali</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> ATI Edilvanzo s.r.l. - Elettroteam s.r.l. - Mo.Ca.M. s.r.l.<br>     <b>Totale:</b> € 37,181,702.4<br>     <a href='website/2.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_f95e3d62961eec0dffad39b90503a0d7.setContent(html_66612971b55350b556a6d60d223c60c7);
+            
+        
+
+        marker_03b89a3e66404b922fcd1c9b7a02edd2.bindPopup(popup_f95e3d62961eec0dffad39b90503a0d7)
+        ;
+
+        
+    
+    
+            marker_03b89a3e66404b922fcd1c9b7a02edd2.bindTooltip(
+                `<div>
+                     Riqualificazione trampolini, sala atleti, torre giudici e tribuna allenatori - UMAF 1 Opere sportive principali
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_03b89a3e66404b922fcd1c9b7a02edd2.setIcon(icon_33bb65cfba67ac721e7f02029dc98396);
+            
+    
+            var marker_1802e25114a1858a9572552b51c8b222 = L.marker(
+                [46.32964636625356, 11.60410585697533],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_402674ba21927b539f713a30cb9aea0f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c5ce564e75d9458be79d61770e32e69b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_74999e5c5bc291b7e01244357b8270da = $(`<div id="html_74999e5c5bc291b7e01244357b8270da" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione trampolini, sala atleti, torre giudici e tribuna allenatori - UMAF 2 Innevamento ed Ascensore inclinato Comune di Predazzo</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> LEITNER SPA, DEMACLENKO IT SRL, COSTRUZIONI MAZZEL SRL<br>     <b>Totale:</b> € 8,992,823.2<br>     <a href='website/3.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_c5ce564e75d9458be79d61770e32e69b.setContent(html_74999e5c5bc291b7e01244357b8270da);
+            
+        
+
+        marker_1802e25114a1858a9572552b51c8b222.bindPopup(popup_c5ce564e75d9458be79d61770e32e69b)
+        ;
+
+        
+    
+    
+            marker_1802e25114a1858a9572552b51c8b222.bindTooltip(
+                `<div>
+                     Riqualificazione trampolini, sala atleti, torre giudici e tribuna allenatori - UMAF 2 Innevamento ed Ascensore inclinato Comune di Predazzo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1802e25114a1858a9572552b51c8b222.setIcon(icon_402674ba21927b539f713a30cb9aea0f);
+            
+    
+            var marker_c3228c239c4d6eaedd65989c3fed16cd = L.marker(
+                [46.30885081238575, 11.59954478134314],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_94478c342e6c6df91a06ce5b75f7609e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_62006e0c9a3c9a1f07d4a82bcbfb242c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6fbe876ac4955e2cc5b51b69e35c2420 = $(`<div id="html_6fbe876ac4955e2cc5b51b69e35c2420" style="width: 100.0%; height: 100.0%;">     <b>Villaggio Olimpico Predazzo presso la Guardia di Finanza Lotto Funzionale 1 - Realizzazione nuovo edificio sviluppato su quattro piani fuori terra</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> Rti Martinelli - Benoni e Cipiemme<br>     <b>Totale:</b> € 25,301,109.98<br>     <a href='website/5.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_62006e0c9a3c9a1f07d4a82bcbfb242c.setContent(html_6fbe876ac4955e2cc5b51b69e35c2420);
+            
+        
+
+        marker_c3228c239c4d6eaedd65989c3fed16cd.bindPopup(popup_62006e0c9a3c9a1f07d4a82bcbfb242c)
+        ;
+
+        
+    
+    
+            marker_c3228c239c4d6eaedd65989c3fed16cd.bindTooltip(
+                `<div>
+                     Villaggio Olimpico Predazzo presso la Guardia di Finanza Lotto Funzionale 1 - Realizzazione nuovo edificio sviluppato su quattro piani fuori terra
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c3228c239c4d6eaedd65989c3fed16cd.setIcon(icon_94478c342e6c6df91a06ce5b75f7609e);
+            
+    
+            var marker_5f82afe5e4c883a6f9748e9fec39ce3f = L.marker(
+                [46.30885081238575, 11.59954478134314],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_8c70d4a1e3b17e8001d3d384c1d94185 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fd5e123f6f3b981681210d6b6d9a39fd = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1376488f0759f3cfa7dbd66045b73dfd = $(`<div id="html_1376488f0759f3cfa7dbd66045b73dfd" style="width: 100.0%; height: 100.0%;">     <b>Villaggio Olimpico Predazzo presso la Guardia di Finanza Lotto Funzionale 2 - Padiglione Latemar: demolizione e ricostruzione di un edificio</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> Impresa Tollot Costruzioni srl<br>     <b>Totale:</b> € 8,139,305.999999999<br>     <a href='website/8.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_fd5e123f6f3b981681210d6b6d9a39fd.setContent(html_1376488f0759f3cfa7dbd66045b73dfd);
+            
+        
+
+        marker_5f82afe5e4c883a6f9748e9fec39ce3f.bindPopup(popup_fd5e123f6f3b981681210d6b6d9a39fd)
+        ;
+
+        
+    
+    
+            marker_5f82afe5e4c883a6f9748e9fec39ce3f.bindTooltip(
+                `<div>
+                     Villaggio Olimpico Predazzo presso la Guardia di Finanza Lotto Funzionale 2 - Padiglione Latemar: demolizione e ricostruzione di un edificio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5f82afe5e4c883a6f9748e9fec39ce3f.setIcon(icon_8c70d4a1e3b17e8001d3d384c1d94185);
+            
+    
+            var marker_a92a1ff8204e0278a760a5f7f7b42354 = L.marker(
+                [46.30885081238575, 11.59954478134314],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_e578423250f076ef7d57e8b7256c7578 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aeb7f1cead074a887d84810c29c014cf = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_4bb6df5be7d7394bdd3d0ba0dcc48c9e = $(`<div id="html_4bb6df5be7d7394bdd3d0ba0dcc48c9e" style="width: 100.0%; height: 100.0%;">     <b>Villaggio Olimpico Predazzo presso la Guardia di Finanza Lotto Funzionale 3 - Padiglione Macchi: Riorganizzazione spazi riqualificazione sismica</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> Consorzio Lavori Ambiente - C.L.B. + Clera e Gamma Scavi e Costruzioni<br>     <b>Totale:</b> € 8,331,990.003<br>     <a href='website/13.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_aeb7f1cead074a887d84810c29c014cf.setContent(html_4bb6df5be7d7394bdd3d0ba0dcc48c9e);
+            
+        
+
+        marker_a92a1ff8204e0278a760a5f7f7b42354.bindPopup(popup_aeb7f1cead074a887d84810c29c014cf)
+        ;
+
+        
+    
+    
+            marker_a92a1ff8204e0278a760a5f7f7b42354.bindTooltip(
+                `<div>
+                     Villaggio Olimpico Predazzo presso la Guardia di Finanza Lotto Funzionale 3 - Padiglione Macchi: Riorganizzazione spazi riqualificazione sismica
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a92a1ff8204e0278a760a5f7f7b42354.setIcon(icon_e578423250f076ef7d57e8b7256c7578);
+            
+    
+            var marker_28c3215d7103f93887c282a7482778cc = L.marker(
+                [46.572621, 12.115402],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_1067f9e5836747365c3b874f5f718aa2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_42ef4689fd0d55d66dd8a6c9731b0887 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f5232e8361bdbd7a33d6d63e8d77842f = $(`<div id="html_f5232e8361bdbd7a33d6d63e8d77842f" style="width: 100.0%; height: 100.0%;">     <b>Servizio di allestimento del Villaggio Olimpico di Cortina d'Ampezzo</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> ATI - CRIPPACAMPEGGIO s.r.l - LOSBERGER DE BOERINTERNATIONAL B.V - F.LLI DE PRA S.p.A.<br>     <b>Totale:</b> € 39,000,000.0<br>     <a href='website/34.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_42ef4689fd0d55d66dd8a6c9731b0887.setContent(html_f5232e8361bdbd7a33d6d63e8d77842f);
+            
+        
+
+        marker_28c3215d7103f93887c282a7482778cc.bindPopup(popup_42ef4689fd0d55d66dd8a6c9731b0887)
+        ;
+
+        
+    
+    
+            marker_28c3215d7103f93887c282a7482778cc.bindTooltip(
+                `<div>
+                     Servizio di allestimento del Villaggio Olimpico di Cortina d'Ampezzo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_28c3215d7103f93887c282a7482778cc.setIcon(icon_1067f9e5836747365c3b874f5f718aa2);
+            
+    
+            var marker_4d33bf196dc06427b9fe7973e7ae6240 = L.marker(
+                [46.46632344719934, 10.37073472018964],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_24b5bd0611a8d7cbf3f00599800983e4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_086d247c40103122e58bfe5da50934de = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_cd058a1ac85d6d311dbb9338e02298b3 = $(`<div id="html_cd058a1ac85d6d311dbb9338e02298b3" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione delle aree contermini di accesso alla venue di gara "Stelvio Alpine Centre" a Bormio (SO).</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> ECOEDILE S.R.L.<br>     <b>Totale:</b> € 1,260,000.0<br>     <a href='website/55.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_086d247c40103122e58bfe5da50934de.setContent(html_cd058a1ac85d6d311dbb9338e02298b3);
+            
+        
+
+        marker_4d33bf196dc06427b9fe7973e7ae6240.bindPopup(popup_086d247c40103122e58bfe5da50934de)
+        ;
+
+        
+    
+    
+            marker_4d33bf196dc06427b9fe7973e7ae6240.bindTooltip(
+                `<div>
+                     Riqualificazione delle aree contermini di accesso alla venue di gara "Stelvio Alpine Centre" a Bormio (SO).
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4d33bf196dc06427b9fe7973e7ae6240.setIcon(icon_24b5bd0611a8d7cbf3f00599800983e4);
+            
+    
+            var marker_c369f80921b3a27e83ba4dad4f35a3ed = L.marker(
+                [46.5397927466595, 10.142726559789944],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_8b5b6151a9df137583f606d4811724e2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_193547dd1bac42ce67c77cf8d0c86bae = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3688cc41227b184a5632dbe5c2771a53 = $(`<div id="html_3688cc41227b184a5632dbe5c2771a53" style="width: 100.0%; height: 100.0%;">     <b>Venue di gara "Livigno Snow Park" a Livigno (SO) - Lotto 2: sistemazione zona di arrivo e delle aree contermini.</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> AR.CO. LAVORI SOCIETÀ COOPERATIVA CONSORTILE - LIVIPARK Soc.Cons.r.l. ( Hana S.r.l. -  Seli Manutenzioni Generali S.r.l.)<br>     <b>Totale:</b> € 4,791,600.0<br>     <a href='website/377.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_193547dd1bac42ce67c77cf8d0c86bae.setContent(html_3688cc41227b184a5632dbe5c2771a53);
+            
+        
+
+        marker_c369f80921b3a27e83ba4dad4f35a3ed.bindPopup(popup_193547dd1bac42ce67c77cf8d0c86bae)
+        ;
+
+        
+    
+    
+            marker_c369f80921b3a27e83ba4dad4f35a3ed.bindTooltip(
+                `<div>
+                     Venue di gara "Livigno Snow Park" a Livigno (SO) - Lotto 2: sistemazione zona di arrivo e delle aree contermini.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c369f80921b3a27e83ba4dad4f35a3ed.setIcon(icon_8b5b6151a9df137583f606d4811724e2);
+            
+    
+            var marker_6363581804279564971c8a4433cb83f9 = L.marker(
+                [46.45419576439086, 10.38837242380225],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_3e90a8efad59d68cd19197a158f7098c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1cdda28296f9397d1746f97105e71b28 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7d19975f2ee560431c0e54585b8bbe2c = $(`<div id="html_7d19975f2ee560431c0e54585b8bbe2c" style="width: 100.0%; height: 100.0%;">     <b>Nuovo impianto a fune per l'arroccamento a servizio della venue di gara "Stelvio Alpine Centre" a Bormio (SO).</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI - GRAFFER S.r.l. e MONDINO COSTRUZIONI S.r.l. & MONTE P S.r.l.<br>     <b>Totale:</b> € 44,655,000.0004<br>     <a href='website/987.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_1cdda28296f9397d1746f97105e71b28.setContent(html_7d19975f2ee560431c0e54585b8bbe2c);
+            
+        
+
+        marker_6363581804279564971c8a4433cb83f9.bindPopup(popup_1cdda28296f9397d1746f97105e71b28)
+        ;
+
+        
+    
+    
+            marker_6363581804279564971c8a4433cb83f9.bindTooltip(
+                `<div>
+                     Nuovo impianto a fune per l'arroccamento a servizio della venue di gara "Stelvio Alpine Centre" a Bormio (SO).
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6363581804279564971c8a4433cb83f9.setIcon(icon_3e90a8efad59d68cd19197a158f7098c);
+            
+    
+            var marker_81f832e9eaf40ec4f493cb758a845a95 = L.marker(
+                [46.457680192291, 10.386603311560677],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_c22c40d640c4531f0e4e8bfdfb0613bb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f220889a24566f0950b6a8158940fe70 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2a1a25620d14f1810e6cfbb16578e08a = $(`<div id="html_2a1a25620d14f1810e6cfbb16578e08a" style="width: 100.0%; height: 100.0%;">     <b>Venue di gara "Stelvio Alpine Centre" a Bormio (SO) - Lotto 1: sistemazione dei tracciati di gara e delle zone di partenza.</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> ECOEDILE S.R.L.<br>     <b>Totale:</b> € 11,757,558.55<br>     <a href='website/2584.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_f220889a24566f0950b6a8158940fe70.setContent(html_2a1a25620d14f1810e6cfbb16578e08a);
+            
+        
+
+        marker_81f832e9eaf40ec4f493cb758a845a95.bindPopup(popup_f220889a24566f0950b6a8158940fe70)
+        ;
+
+        
+    
+    
+            marker_81f832e9eaf40ec4f493cb758a845a95.bindTooltip(
+                `<div>
+                     Venue di gara "Stelvio Alpine Centre" a Bormio (SO) - Lotto 1: sistemazione dei tracciati di gara e delle zone di partenza.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_81f832e9eaf40ec4f493cb758a845a95.setIcon(icon_c22c40d640c4531f0e4e8bfdfb0613bb);
+            
+    
+            var marker_7daf4b2c243812534776e0636dfc406c = L.marker(
+                [46.457680192291, 10.386603311560677],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_c16c412b0d24e65992edb37c7baf2ce8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_832aa23658943d15bd418e415a32caa0 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_18b2e03d5197881b051e8d1e8d7b1793 = $(`<div id="html_18b2e03d5197881b051e8d1e8d7b1793" style="width: 100.0%; height: 100.0%;">     <b>Venue di gara "Stelvio Alpine Centre" a Bormio (SO) - Lotto 2: realizzazione dell'impianto di innevamento e opere annesse</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI: TechnoAlpin S.p.A. - EcoEdile S.r.l.<br>     <b>Totale:</b> € 19,940,043.4692<br>     <a href='website/4181.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_832aa23658943d15bd418e415a32caa0.setContent(html_18b2e03d5197881b051e8d1e8d7b1793);
+            
+        
+
+        marker_7daf4b2c243812534776e0636dfc406c.bindPopup(popup_832aa23658943d15bd418e415a32caa0)
+        ;
+
+        
+    
+    
+            marker_7daf4b2c243812534776e0636dfc406c.bindTooltip(
+                `<div>
+                     Venue di gara "Stelvio Alpine Centre" a Bormio (SO) - Lotto 2: realizzazione dell'impianto di innevamento e opere annesse
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7daf4b2c243812534776e0636dfc406c.setIcon(icon_c16c412b0d24e65992edb37c7baf2ce8);
+            
+    
+            var marker_d4e5bc9f691b3410fd444090a1cea58e = L.marker(
+                [46.53865475381478, 10.145200932892449],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_a3b1b656d2008f0c87e5ab4309198035 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0eab5b71bdf5d571d2460356586f8409 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e217e644aa15d337da1b67f0b4e482f6 = $(`<div id="html_e217e644aa15d337da1b67f0b4e482f6" style="width: 100.0%; height: 100.0%;">     <b>Realizzazione Piste, sistemazione "Skiweg", impianto di risalita a servizio delle aree di gara</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI tra MAIR JOSEF & CO. SAS DI MAIR KLAUS, MND France SAS e TER SYSTEM S.r.l<br>     <b>Totale:</b> € 14,647,225.9613<br>     <a href='website/6765.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_0eab5b71bdf5d571d2460356586f8409.setContent(html_e217e644aa15d337da1b67f0b4e482f6);
+            
+        
+
+        marker_d4e5bc9f691b3410fd444090a1cea58e.bindPopup(popup_0eab5b71bdf5d571d2460356586f8409)
+        ;
+
+        
+    
+    
+            marker_d4e5bc9f691b3410fd444090a1cea58e.bindTooltip(
+                `<div>
+                     Realizzazione Piste, sistemazione "Skiweg", impianto di risalita a servizio delle aree di gara
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d4e5bc9f691b3410fd444090a1cea58e.setIcon(icon_a3b1b656d2008f0c87e5ab4309198035);
+            
+    
+            var marker_bc21efa818e51ae8b0d1729f390677b3 = L.marker(
+                [46.53865475381478, 10.145200932892449],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_09d00a435c5e843edbd1a42631f2f1b2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ad2040a830d4939b4e8b17034c0e3c71 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f8dcd71c22601fb168d6867f1f057506 = $(`<div id="html_f8dcd71c22601fb168d6867f1f057506" style="width: 100.0%; height: 100.0%;">     <b>Nuovo bacino alpino comprensivo di allaccio e impianto di innevamento per tracciati di gara A e B</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI tra MAIR JOSEF & CO. SAS DI MAIR KLAUS, TECHNOALPIN S.p.A. e BRUNNER&LEITER S.r.l.<br>     <b>Totale:</b> € 21,725,737.5812<br>     <a href='website/10946.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_ad2040a830d4939b4e8b17034c0e3c71.setContent(html_f8dcd71c22601fb168d6867f1f057506);
+            
+        
+
+        marker_bc21efa818e51ae8b0d1729f390677b3.bindPopup(popup_ad2040a830d4939b4e8b17034c0e3c71)
+        ;
+
+        
+    
+    
+            marker_bc21efa818e51ae8b0d1729f390677b3.bindTooltip(
+                `<div>
+                     Nuovo bacino alpino comprensivo di allaccio e impianto di innevamento per tracciati di gara A e B
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bc21efa818e51ae8b0d1729f390677b3.setIcon(icon_09d00a435c5e843edbd1a42631f2f1b2);
+            
+    
+            var marker_229c5a7d2c5a9487625a66edc2aca88a = L.marker(
+                [46.1260808292737, 11.252434737247498],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_06715537f7777dcdd17930b00ffa5c4f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_66167af91b0b152ea5dbba81e806357d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_667d87cb5b010582f791ec792672f727 = $(`<div id="html_667d87cb5b010582f791ec792672f727" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione impianto per il pattinaggio di velocità Lotto 1 - Riqualificazione dello palazzetto indoor esistente</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI HOLLAENDER S.r.l., IMPRESA COSTRUZIONI CARRARO GEOM. ADRIANO & C. s.n.c.,  COSTRUZIONI CASAROTTO S.p.A.<br>     <b>Totale:</b> € 6,600,000.0001<br>     <a href='website/17711.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_66167af91b0b152ea5dbba81e806357d.setContent(html_667d87cb5b010582f791ec792672f727);
+            
+        
+
+        marker_229c5a7d2c5a9487625a66edc2aca88a.bindPopup(popup_66167af91b0b152ea5dbba81e806357d)
+        ;
+
+        
+    
+    
+            marker_229c5a7d2c5a9487625a66edc2aca88a.bindTooltip(
+                `<div>
+                     Riqualificazione impianto per il pattinaggio di velocità Lotto 1 - Riqualificazione dello palazzetto indoor esistente
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_229c5a7d2c5a9487625a66edc2aca88a.setIcon(icon_06715537f7777dcdd17930b00ffa5c4f);
+            
+    
+            var marker_4c240dbff8cc4132023e72d0235cd795 = L.marker(
+                [46.1260808292737, 11.252434737247498],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_41d12e200a387a9f81b746aa36c6b6f1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_49e3bdddb2f68ba4a6336fdbbc628a87 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_93808a033a568e729117d76e497e6622 = $(`<div id="html_93808a033a568e729117d76e497e6622" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione impianto per il pattinaggio di velocità Lotto 2 - Riqualificazione dell'anello outdoor esistente</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI COSTRUZIONI CASAROTTO S.p.A. - CARRARO IMPRESA SRL e HOLLAENDER S.R.L<br>     <b>Totale:</b> € 5,100,000.0<br>     <a href='website/28657.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_49e3bdddb2f68ba4a6336fdbbc628a87.setContent(html_93808a033a568e729117d76e497e6622);
+            
+        
+
+        marker_4c240dbff8cc4132023e72d0235cd795.bindPopup(popup_49e3bdddb2f68ba4a6336fdbbc628a87)
+        ;
+
+        
+    
+    
+            marker_4c240dbff8cc4132023e72d0235cd795.bindTooltip(
+                `<div>
+                     Riqualificazione impianto per il pattinaggio di velocità Lotto 2 - Riqualificazione dell'anello outdoor esistente
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4c240dbff8cc4132023e72d0235cd795.setIcon(icon_41d12e200a387a9f81b746aa36c6b6f1);
+            
+    
+            var marker_9eff3237b559c388c142268f5590df00 = L.marker(
+                [46.28214815184704, 11.52385227951603],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_7fb14159da244dbd23be060a35a7df78 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1f6a899f26b2298926cd9a46cb3a8df5 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a246cbd768644f26f5b8cbfa360db0d3 = $(`<div id="html_a246cbd768644f26f5b8cbfa360db0d3" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione Stadio per lo sci di Fondo Lotto  1B - Demolizione e ricostruzione edificio ex tribuna - realizzazione nuovo centro federale</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> Stroppa Costruzioni s.r.l.<br>     <b>Totale:</b> € 5,179,340.0<br>     <a href='website/121393.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_1f6a899f26b2298926cd9a46cb3a8df5.setContent(html_a246cbd768644f26f5b8cbfa360db0d3);
+            
+        
+
+        marker_9eff3237b559c388c142268f5590df00.bindPopup(popup_1f6a899f26b2298926cd9a46cb3a8df5)
+        ;
+
+        
+    
+    
+            marker_9eff3237b559c388c142268f5590df00.bindTooltip(
+                `<div>
+                     Riqualificazione Stadio per lo sci di Fondo Lotto  1B - Demolizione e ricostruzione edificio ex tribuna - realizzazione nuovo centro federale
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9eff3237b559c388c142268f5590df00.setIcon(icon_7fb14159da244dbd23be060a35a7df78);
+            
+    
+            var marker_65342547536a97b3a6c2431917d99206 = L.marker(
+                [46.28214815184704, 11.52385227951603],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_5f18ac689f82871ce0e1ceca7be20916 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0e1075c9322cfacaacacc4bab7029e8d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8b1711d927e45b58780598f6f9102b98 = $(`<div id="html_8b1711d927e45b58780598f6f9102b98" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione Stadio per lo sci di Fondo Lotto Funzionale 2 - Manutenzione straordinaria dell'impianto sportivo</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 881,499.7623<br>     <a href='website/196418.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_0e1075c9322cfacaacacc4bab7029e8d.setContent(html_8b1711d927e45b58780598f6f9102b98);
+            
+        
+
+        marker_65342547536a97b3a6c2431917d99206.bindPopup(popup_0e1075c9322cfacaacacc4bab7029e8d)
+        ;
+
+        
+    
+    
+            marker_65342547536a97b3a6c2431917d99206.bindTooltip(
+                `<div>
+                     Riqualificazione Stadio per lo sci di Fondo Lotto Funzionale 2 - Manutenzione straordinaria dell'impianto sportivo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_65342547536a97b3a6c2431917d99206.setIcon(icon_5f18ac689f82871ce0e1ceca7be20916);
+            
+    
+            var marker_9476ea10ca84889b7798d9a1147b5bbe = L.marker(
+                [46.28214815184704, 11.52385227951603],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_1fa826c1113688ef635e0c354a908402 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ae6f1159a52551ca49201b9110668bdf = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_99367c4cefd44ca4583aa0398001a06f = $(`<div id="html_99367c4cefd44ca4583aa0398001a06f" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione Stadio per lo sci di Fondo Lotto 3 - Adeguamento piste da sci, impianto d'innevamento e illuminazione</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> MISCONEL SRL<br>     <b>Totale:</b> € 6,478,750.0003<br>     <a href='website/317811.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_ae6f1159a52551ca49201b9110668bdf.setContent(html_99367c4cefd44ca4583aa0398001a06f);
+            
+        
+
+        marker_9476ea10ca84889b7798d9a1147b5bbe.bindPopup(popup_ae6f1159a52551ca49201b9110668bdf)
+        ;
+
+        
+    
+    
+            marker_9476ea10ca84889b7798d9a1147b5bbe.bindTooltip(
+                `<div>
+                     Riqualificazione Stadio per lo sci di Fondo Lotto 3 - Adeguamento piste da sci, impianto d'innevamento e illuminazione
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9476ea10ca84889b7798d9a1147b5bbe.setIcon(icon_1fa826c1113688ef635e0c354a908402);
+            
+    
+            var marker_2643cc1ca7f42552d872c0277b603527 = L.marker(
+                [46.51047588933449, 12.14606691562256],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_52e2b95e5c5dcc10c5602533edff62d5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bfe1ece919d0c95c91cf7547ddb7cc7b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b92ea11787ff955e443ab530ee2029fd = $(`<div id="html_b92ea11787ff955e443ab530ee2029fd" style="width: 100.0%; height: 100.0%;">     <b>Ristrutturazione trampolino 1956 e braciere | Interventi infrastrutturali di collegamento tecnologico e sottoservizi</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI  - ECOEDILE S.r.l - S.E.C.A.P. S.p.A e DUE ESSE IMPIANTI S.r.l.<br>     <b>Totale:</b> € 11,745,998.62<br>     <a href='website/832040.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_bfe1ece919d0c95c91cf7547ddb7cc7b.setContent(html_b92ea11787ff955e443ab530ee2029fd);
+            
+        
+
+        marker_2643cc1ca7f42552d872c0277b603527.bindPopup(popup_bfe1ece919d0c95c91cf7547ddb7cc7b)
+        ;
+
+        
+    
+    
+            marker_2643cc1ca7f42552d872c0277b603527.bindTooltip(
+                `<div>
+                     Ristrutturazione trampolino 1956 e braciere | Interventi infrastrutturali di collegamento tecnologico e sottoservizi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2643cc1ca7f42552d872c0277b603527.setIcon(icon_52e2b95e5c5dcc10c5602533edff62d5);
+            
+    
+            var marker_27d66cfef46af641c244272526ed5671 = L.marker(
+                [46.54450975312703, 12.1331658616043],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_81ed190f7aa63a1ac3d2f1b919c2efaa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3ca6ab50e7a7b194be6156f34fe16ec7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_045d7a1c1009a2fc95ed695e6c10882e = $(`<div id="html_045d7a1c1009a2fc95ed695e6c10882e" style="width: 100.0%; height: 100.0%;">     <b>Cortina Olympic Stadium a Cortina d'Ampezzo (BL), ampliamento, adeguamento degli spogliatoi e manutenzione straordinaria della copertura</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI Ecoedile Duesse Impianti<br>     <b>Totale:</b> € 22,239,197.67<br>     <a href='website/1346269.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_3ca6ab50e7a7b194be6156f34fe16ec7.setContent(html_045d7a1c1009a2fc95ed695e6c10882e);
+            
+        
+
+        marker_27d66cfef46af641c244272526ed5671.bindPopup(popup_3ca6ab50e7a7b194be6156f34fe16ec7)
+        ;
+
+        
+    
+    
+            marker_27d66cfef46af641c244272526ed5671.bindTooltip(
+                `<div>
+                     Cortina Olympic Stadium a Cortina d'Ampezzo (BL), ampliamento, adeguamento degli spogliatoi e manutenzione straordinaria della copertura
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_27d66cfef46af641c244272526ed5671.setIcon(icon_81ed190f7aa63a1ac3d2f1b919c2efaa);
+            
+    
+            var marker_0a71f5aab478046890e7e08840fb64aa = L.marker(
+                [46.54521183249737, 12.12322113148918],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_9d6b7b5338ae92d0cc4ca93f9fc48dd8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1536344ef78a309c885ef03c55d851f3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e139b4f5b8955d6e49903ea6b30eb5b9 = $(`<div id="html_e139b4f5b8955d6e49903ea6b30eb5b9" style="width: 100.0%; height: 100.0%;">     <b>CORTINA SLIDING CENTRE - LOTTO 2 Riqualificazione della Pista "Eugenio Monti"</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> IMPRESA PIZZAROTTI & C. SPA<br>     <b>Totale:</b> € 118,424,000.0<br>     <a href='website/3524578.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_1536344ef78a309c885ef03c55d851f3.setContent(html_e139b4f5b8955d6e49903ea6b30eb5b9);
+            
+        
+
+        marker_0a71f5aab478046890e7e08840fb64aa.bindPopup(popup_1536344ef78a309c885ef03c55d851f3)
+        ;
+
+        
+    
+    
+            marker_0a71f5aab478046890e7e08840fb64aa.bindTooltip(
+                `<div>
+                     CORTINA SLIDING CENTRE - LOTTO 2 Riqualificazione della Pista "Eugenio Monti"
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0a71f5aab478046890e7e08840fb64aa.setIcon(icon_9d6b7b5338ae92d0cc4ca93f9fc48dd8);
+            
+    
+            var marker_151ec04ae4c2d15cc4aeb1485c1e3512 = L.marker(
+                [46.54521183249737, 12.12322113148918],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_a1124b54c46081b781e8597ac6ff296a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ec41698d5fdeca305c4402db47af11fc = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9ed4de9fc7312a445de2120cb2c17864 = $(`<div id="html_9ed4de9fc7312a445de2120cb2c17864" style="width: 100.0%; height: 100.0%;">     <b>CORTINA SLIDING CENTRE - Recupero edificio Cabina S e realizzazione nuovo edificio Bob bar</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> EDILSOLIGO IMPRESA COSTRUZIONI S.r.l.<br>     <b>Totale:</b> € 2,610,481.34<br>     <a href='website/5702887.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_ec41698d5fdeca305c4402db47af11fc.setContent(html_9ed4de9fc7312a445de2120cb2c17864);
+            
+        
+
+        marker_151ec04ae4c2d15cc4aeb1485c1e3512.bindPopup(popup_ec41698d5fdeca305c4402db47af11fc)
+        ;
+
+        
+    
+    
+            marker_151ec04ae4c2d15cc4aeb1485c1e3512.bindTooltip(
+                `<div>
+                     CORTINA SLIDING CENTRE - Recupero edificio Cabina S e realizzazione nuovo edificio Bob bar
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_151ec04ae4c2d15cc4aeb1485c1e3512.setIcon(icon_a1124b54c46081b781e8597ac6ff296a);
+            
+    
+            var marker_aaf0b12b4833a7e3df07a045bd137978 = L.marker(
+                [46.53668072587332, 12.1020834131936],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_adce41a55d5bf85956688513ef5b7d46 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6c45ebabf2b88e6d9fa0fe6b0f73e5f0 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1f9ba5eace6a80db5bd8961f7ee0e4af = $(`<div id="html_1f9ba5eace6a80db5bd8961f7ee0e4af" style="width: 100.0%; height: 100.0%;">     <b>Posa condotte e nuova opera di presa idrica dal fiume Boite</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI MAIR JOSEF & CO. SAS - TECHNOALPIN S.p.A - SEVIS S.r.l<br>     <b>Totale:</b> € 7,114,579.81<br>     <a href='website/24157817.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_6c45ebabf2b88e6d9fa0fe6b0f73e5f0.setContent(html_1f9ba5eace6a80db5bd8961f7ee0e4af);
+            
+        
+
+        marker_aaf0b12b4833a7e3df07a045bd137978.bindPopup(popup_6c45ebabf2b88e6d9fa0fe6b0f73e5f0)
+        ;
+
+        
+    
+    
+            marker_aaf0b12b4833a7e3df07a045bd137978.bindTooltip(
+                `<div>
+                     Posa condotte e nuova opera di presa idrica dal fiume Boite
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aaf0b12b4833a7e3df07a045bd137978.setIcon(icon_adce41a55d5bf85956688513ef5b7d46);
+            
+    
+            var marker_c44a294536cbfec3d217a80a62ae5583 = L.marker(
+                [46.53668072587332, 12.1020834131936],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_42da8bebcc024e85e6d249517588012e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fb6565170473e79a17e7bfc5f3962d9d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_42a61e8e2658945014e0c45b25c30d14 = $(`<div id="html_42a61e8e2658945014e0c45b25c30d14" style="width: 100.0%; height: 100.0%;">     <b>Upgrade delle strutture e delle dotazioni per aggiornamento alle nuove tecnologie e adeguamento alle competizioni paralimpiche</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> DEON S.p.a<br>     <b>Totale:</b> € 1,394,498.35<br>     <a href='website/39088169.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_fb6565170473e79a17e7bfc5f3962d9d.setContent(html_42a61e8e2658945014e0c45b25c30d14);
+            
+        
+
+        marker_c44a294536cbfec3d217a80a62ae5583.bindPopup(popup_fb6565170473e79a17e7bfc5f3962d9d)
+        ;
+
+        
+    
+    
+            marker_c44a294536cbfec3d217a80a62ae5583.bindTooltip(
+                `<div>
+                     Upgrade delle strutture e delle dotazioni per aggiornamento alle nuove tecnologie e adeguamento alle competizioni paralimpiche
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c44a294536cbfec3d217a80a62ae5583.setIcon(icon_42da8bebcc024e85e6d249517588012e);
+            
+    
+            var marker_00c90015c2fd5545ea91b247826173c0 = L.marker(
+                [45.43899579989576, 10.99435739998741],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_634035605c81a13df46b67a1090bda47 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c7e2a48e68deca3cf746a66035edaa3d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_46f0715a8f5c4f194a56351d80fe5157 = $(`<div id="html_46f0715a8f5c4f194a56351d80fe5157" style="width: 100.0%; height: 100.0%;">     <b>Interventi per accessibilità dell'anfiteatro Arena di Verona - Completamento della riqualificazione dei servizi igienici dell'anfiteatro</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> PROG. RES. s.r.l / SERVER s.r.l<br>     <b>Totale:</b> € 1,624,000.0<br>     <a href='website/63245986.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_c7e2a48e68deca3cf746a66035edaa3d.setContent(html_46f0715a8f5c4f194a56351d80fe5157);
+            
+        
+
+        marker_00c90015c2fd5545ea91b247826173c0.bindPopup(popup_c7e2a48e68deca3cf746a66035edaa3d)
+        ;
+
+        
+    
+    
+            marker_00c90015c2fd5545ea91b247826173c0.bindTooltip(
+                `<div>
+                     Interventi per accessibilità dell'anfiteatro Arena di Verona - Completamento della riqualificazione dei servizi igienici dell'anfiteatro
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_00c90015c2fd5545ea91b247826173c0.setIcon(icon_634035605c81a13df46b67a1090bda47);
+            
+    
+            var marker_5ba61130bffa599b542bf9b4a3967899 = L.marker(
+                [45.439131608298176, 10.994493635491612],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_b913f03f6d5e999d2356da3af804cc0f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ce3518487347fb842d1fd075b90e981 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_10f55bb0156e8ada23d25a3c3704e142 = $(`<div id="html_10f55bb0156e8ada23d25a3c3704e142" style="width: 100.0%; height: 100.0%;">     <b>Interventi per accessibilità dell'anfiteatro Arena di Verona - Riqualificazione degli accessi</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> KOSTRUTTIVA ScpA<br>     <b>Totale:</b> € 18,969,800.0<br>     <a href='website/102334155.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_1ce3518487347fb842d1fd075b90e981.setContent(html_10f55bb0156e8ada23d25a3c3704e142);
+            
+        
+
+        marker_5ba61130bffa599b542bf9b4a3967899.bindPopup(popup_1ce3518487347fb842d1fd075b90e981)
+        ;
+
+        
+    
+    
+            marker_5ba61130bffa599b542bf9b4a3967899.bindTooltip(
+                `<div>
+                     Interventi per accessibilità dell'anfiteatro Arena di Verona - Riqualificazione degli accessi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5ba61130bffa599b542bf9b4a3967899.setIcon(icon_b913f03f6d5e999d2356da3af804cc0f);
+            
+    
+            var marker_22ba09155e72cd649fd4c6e3aab276a4 = L.marker(
+                [46.53314914607808, 12.13610957899233],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_b051abc4e5ce3b10cc903303f93ddbfb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d52173ae9d93af629f452a6c812fba22 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c439795d99985a52345e34429c253664 = $(`<div id="html_c439795d99985a52345e34429c253664" style="width: 100.0%; height: 100.0%;">     <b>Realizzazione del nuovo impianto a fune</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI - Graffer S.r.l - ECOEDILE - S.r.l. e DOLOMITI STRADE S.r.l.<br>     <b>Totale:</b> € 34,930,322.52<br>     <a href='website/165580141.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_d52173ae9d93af629f452a6c812fba22.setContent(html_c439795d99985a52345e34429c253664);
+            
+        
+
+        marker_22ba09155e72cd649fd4c6e3aab276a4.bindPopup(popup_d52173ae9d93af629f452a6c812fba22)
+        ;
+
+        
+    
+    
+            marker_22ba09155e72cd649fd4c6e3aab276a4.bindTooltip(
+                `<div>
+                     Realizzazione del nuovo impianto a fune
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_22ba09155e72cd649fd4c6e3aab276a4.setIcon(icon_b051abc4e5ce3b10cc903303f93ddbfb);
+            
+    
+            var marker_1f74558b491a63b76d2164434aa5abab = L.marker(
+                [46.5371317998832, 12.136254576544893],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_0c3fd433d948900eab237768c1f74b2b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4762a593bbb953cedd66726ba207318c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c7aa919000320f69ab278d8bed30bd59 = $(`<div id="html_c7aa919000320f69ab278d8bed30bd59" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione dell'immobile ex-Panificio nel Comune di Cortina d'Ampezzo (BL)</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI Ecoedile Duesse Impianti<br>     <b>Totale:</b> € 7,000,000.0<br>     <a href='website/701408733.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_4762a593bbb953cedd66726ba207318c.setContent(html_c7aa919000320f69ab278d8bed30bd59);
+            
+        
+
+        marker_1f74558b491a63b76d2164434aa5abab.bindPopup(popup_4762a593bbb953cedd66726ba207318c)
+        ;
+
+        
+    
+    
+            marker_1f74558b491a63b76d2164434aa5abab.bindTooltip(
+                `<div>
+                     Riqualificazione dell'immobile ex-Panificio nel Comune di Cortina d'Ampezzo (BL)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1f74558b491a63b76d2164434aa5abab.setIcon(icon_0c3fd433d948900eab237768c1f74b2b);
+            
+    
+            var marker_61c0d951ba841a414b787f9dd9ac5d96 = L.marker(
+                [46.859961, 12.102025],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_3e68c67ed017727125672f4471f1d76d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fc7bb075ab9779de940b5021fd4ee124 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a01207c23c238f90d5f93afe9d8ab250 = $(`<div id="html_a01207c23c238f90d5f93afe9d8ab250" style="width: 100.0%; height: 100.0%;">     <b>Casa culturale Anterselva di Mezzo</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI - Gasser Markus S.r.l. & Decor S.r.l.<br>     <b>Totale:</b> € 4,500,300.0<br>     <a href='website/7778742049.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_fc7bb075ab9779de940b5021fd4ee124.setContent(html_a01207c23c238f90d5f93afe9d8ab250);
+            
+        
+
+        marker_61c0d951ba841a414b787f9dd9ac5d96.bindPopup(popup_fc7bb075ab9779de940b5021fd4ee124)
+        ;
+
+        
+    
+    
+            marker_61c0d951ba841a414b787f9dd9ac5d96.bindTooltip(
+                `<div>
+                     Casa culturale Anterselva di Mezzo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_61c0d951ba841a414b787f9dd9ac5d96.setIcon(icon_3e68c67ed017727125672f4471f1d76d);
+            
+    
+            var marker_e9be4cf9d0dac98536599c4a98efff2a = L.marker(
+                [46.539304, 10.143107],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_9abe12d3f54b950bf7a14404159e866a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8210698fe4fe41fbf44a6e2c2a5362a0 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a730280aa02bc8f6a93738a9fb00336c = $(`<div id="html_a730280aa02bc8f6a93738a9fb00336c" style="width: 100.0%; height: 100.0%;">     <b>Realizzazione del parcheggio interrato Mottolino località Bondi</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> AR.CO. LAVORI SOCIETÀ COOPERATIVA CONSORTILE - LIVIPARK Soc.Cons.r.l. ( Hana S.r.l. -  Seli Manutenzioni Generali S.r.l.)<br>     <b>Totale:</b> € 33,850,300.0<br>     <a href='website/12586269025.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_8210698fe4fe41fbf44a6e2c2a5362a0.setContent(html_a730280aa02bc8f6a93738a9fb00336c);
+            
+        
+
+        marker_e9be4cf9d0dac98536599c4a98efff2a.bindPopup(popup_8210698fe4fe41fbf44a6e2c2a5362a0)
+        ;
+
+        
+    
+    
+            marker_e9be4cf9d0dac98536599c4a98efff2a.bindTooltip(
+                `<div>
+                     Realizzazione del parcheggio interrato Mottolino località Bondi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e9be4cf9d0dac98536599c4a98efff2a.setIcon(icon_9abe12d3f54b950bf7a14404159e866a);
+            
+    
+            var marker_899c646b3c5c71152024443045bc8fc0 = L.marker(
+                [46.879496, 12.156111],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_41b0ba05ab41c554c8fba7f1d8747ecc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f71bec7e2ea23804b813ca53af12a399 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_74bb07f0a5af33f7df430bbc9235b449 = $(`<div id="html_74bb07f0a5af33f7df430bbc9235b449" style="width: 100.0%; height: 100.0%;">     <b>Costruzione di un bacino artificiale per l'innevamento</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b>  Karl Wieser SNC<br>     <b>Totale:</b> € 5,000,000.0<br>     <a href='website/20365011074.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_f71bec7e2ea23804b813ca53af12a399.setContent(html_74bb07f0a5af33f7df430bbc9235b449);
+            
+        
+
+        marker_899c646b3c5c71152024443045bc8fc0.bindPopup(popup_f71bec7e2ea23804b813ca53af12a399)
+        ;
+
+        
+    
+    
+            marker_899c646b3c5c71152024443045bc8fc0.bindTooltip(
+                `<div>
+                     Costruzione di un bacino artificiale per l'innevamento
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_899c646b3c5c71152024443045bc8fc0.setIcon(icon_41b0ba05ab41c554c8fba7f1d8747ecc);
+            
+    
+            var marker_afeba6cea0682984d319242ef86b66ad = L.marker(
+                [46.88484235791036, 12.15315006609745],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_bb0f4b71f5e9c5b68088aa099f83308b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c1b0ccbda4a3d5bdf58c4ee02ee664ad = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d91406ee41bc6c97c2f293d3cf774c7c = $(`<div id="html_d91406ee41bc6c97c2f293d3cf774c7c" style="width: 100.0%; height: 100.0%;">     <b>Impianto sportivo Anterselva sistemazione illuminazione, controllo accessi, digitalizzazione</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> ATI ELPO srl/UNIONBAU SPA<br>     <b>Totale:</b> € 4,510,500.0<br>     <a href='website/53316291173.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_c1b0ccbda4a3d5bdf58c4ee02ee664ad.setContent(html_d91406ee41bc6c97c2f293d3cf774c7c);
+            
+        
+
+        marker_afeba6cea0682984d319242ef86b66ad.bindPopup(popup_c1b0ccbda4a3d5bdf58c4ee02ee664ad)
+        ;
+
+        
+    
+    
+            marker_afeba6cea0682984d319242ef86b66ad.bindTooltip(
+                `<div>
+                     Impianto sportivo Anterselva sistemazione illuminazione, controllo accessi, digitalizzazione
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_afeba6cea0682984d319242ef86b66ad.setIcon(icon_bb0f4b71f5e9c5b68088aa099f83308b);
+            
+    
+            var marker_8ed5c6c6cef5f6f4a6644e50c7ec639c = L.marker(
+                [46.88484235791036, 12.15315006609745],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_e32514b99cf7d2e40618fdd2adbe7581 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6e9fb4af790e6876f0eb3f5e1220c064 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_551707212f82008f616a3d29b068d5c3 = $(`<div id="html_551707212f82008f616a3d29b068d5c3" style="width: 100.0%; height: 100.0%;">     <b>Adeguamento dello Stadio del biathlon di Anterselva</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> Unionbau AG<br>     <b>Totale:</b> € 37,370,936.07<br>     <a href='website/86267571272.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_6e9fb4af790e6876f0eb3f5e1220c064.setContent(html_551707212f82008f616a3d29b068d5c3);
+            
+        
+
+        marker_8ed5c6c6cef5f6f4a6644e50c7ec639c.bindPopup(popup_6e9fb4af790e6876f0eb3f5e1220c064)
+        ;
+
+        
+    
+    
+            marker_8ed5c6c6cef5f6f4a6644e50c7ec639c.bindTooltip(
+                `<div>
+                     Adeguamento dello Stadio del biathlon di Anterselva
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8ed5c6c6cef5f6f4a6644e50c7ec639c.setIcon(icon_e32514b99cf7d2e40618fdd2adbe7581);
+            
+    
+            var marker_ac6824769b402e5f2b8b0e84557a2244 = L.marker(
+                [46.86089436709443, 12.1055333378621],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_d3c695971d7a7a9d10377655479387b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9071e3ffa2f390b1b1faff3befd9c9e7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3bbfecfa1fd29380b9c4a1696b8ba2de = $(`<div id="html_3bbfecfa1fd29380b9c4a1696b8ba2de" style="width: 100.0%; height: 100.0%;">     <b>Demolizione e ricostruzione ponte 44/14 al km 11+655.</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> Goller Bögl srl<br>     <b>Totale:</b> € 3,771,000.0<br>     <a href='website/225851433717.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_9071e3ffa2f390b1b1faff3befd9c9e7.setContent(html_3bbfecfa1fd29380b9c4a1696b8ba2de);
+            
+        
+
+        marker_ac6824769b402e5f2b8b0e84557a2244.bindPopup(popup_9071e3ffa2f390b1b1faff3befd9c9e7)
+        ;
+
+        
+    
+    
+            marker_ac6824769b402e5f2b8b0e84557a2244.bindTooltip(
+                `<div>
+                     Demolizione e ricostruzione ponte 44/14 al km 11+655.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ac6824769b402e5f2b8b0e84557a2244.setIcon(icon_d3c695971d7a7a9d10377655479387b9);
+            
+    
+            var marker_5343a7f3365b250381bff646b63e3c82 = L.marker(
+                [46.791305, 11.98628],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_0d86ba300eeae8e31d1af5525d59b06e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c0a11a010c0e7821afd7533f713fc273 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_36214027648163d99cb1ba09022370a2 = $(`<div id="html_36214027648163d99cb1ba09022370a2" style="width: 100.0%; height: 100.0%;">     <b>Circonvallazione di Perca.</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> Strabag SPA- Alpenbau Srl- Unionbau SPA<br>     <b>Totale:</b> € 140,586,655.19<br>     <a href='website/1548008755920.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_c0a11a010c0e7821afd7533f713fc273.setContent(html_36214027648163d99cb1ba09022370a2);
+            
+        
+
+        marker_5343a7f3365b250381bff646b63e3c82.bindPopup(popup_c0a11a010c0e7821afd7533f713fc273)
+        ;
+
+        
+    
+    
+            marker_5343a7f3365b250381bff646b63e3c82.bindTooltip(
+                `<div>
+                     Circonvallazione di Perca.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5343a7f3365b250381bff646b63e3c82.setIcon(icon_0d86ba300eeae8e31d1af5525d59b06e);
+            
+    
+            var marker_64561f2bdf2bb7f3c53a9d16de6e62c1 = L.marker(
+                [46.552327, 11.974963],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_140d4c19f0aac6adec353da600b0fa56 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a32325bf283dd9a6a2159f198d95ecfb = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2f6ef63ea46bd0a801bdb96ea29db2c4 = $(`<div id="html_2f6ef63ea46bd0a801bdb96ea29db2c4" style="width: 100.0%; height: 100.0%;">     <b>Collegamento Valbadia - Cortina (Tratta PA Bolzano) II Lotto.</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> Alpenbau Srl<br>     <b>Totale:</b> € 6,318,900.0<br>     <a href='website/4052739537881.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_a32325bf283dd9a6a2159f198d95ecfb.setContent(html_2f6ef63ea46bd0a801bdb96ea29db2c4);
+            
+        
+
+        marker_64561f2bdf2bb7f3c53a9d16de6e62c1.bindPopup(popup_a32325bf283dd9a6a2159f198d95ecfb)
+        ;
+
+        
+    
+    
+            marker_64561f2bdf2bb7f3c53a9d16de6e62c1.bindTooltip(
+                `<div>
+                     Collegamento Valbadia - Cortina (Tratta PA Bolzano) II Lotto.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_64561f2bdf2bb7f3c53a9d16de6e62c1.setIcon(icon_140d4c19f0aac6adec353da600b0fa56);
+            
+    
+            var marker_901b7f6f3754ff2525e6139266eb5dbf = L.marker(
+                [46.552501, 11.977542],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_98026b80eeaff662ad51d646ea5ef11c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8dcde5c55cc3f24e86b294b900438b52 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d56ce08feb06fff4a569e60b9bdb5b13 = $(`<div id="html_d56ce08feb06fff4a569e60b9bdb5b13" style="width: 100.0%; height: 100.0%;">     <b>Collegamento Valbadia - Cortina (Tratta PA Bolzano) I Lotto.</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> De.Co.Bau<br>     <b>Totale:</b> € 4,280,100.0<br>     <a href='website/6557470319842.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_8dcde5c55cc3f24e86b294b900438b52.setContent(html_d56ce08feb06fff4a569e60b9bdb5b13);
+            
+        
+
+        marker_901b7f6f3754ff2525e6139266eb5dbf.bindPopup(popup_8dcde5c55cc3f24e86b294b900438b52)
+        ;
+
+        
+    
+    
+            marker_901b7f6f3754ff2525e6139266eb5dbf.bindTooltip(
+                `<div>
+                     Collegamento Valbadia - Cortina (Tratta PA Bolzano) I Lotto.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_901b7f6f3754ff2525e6139266eb5dbf.setIcon(icon_98026b80eeaff662ad51d646ea5ef11c);
+            
+    
+            var marker_0056da05dabb884ec75d13d78986d608 = L.marker(
+                [46.161638, 11.285284],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_1918b1dcf8202999225f0647df791d0f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3fef7b417dad11afa038f216ae2bf96b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_aca8dfb661ddd16d8470606ee0ec2f53 = $(`<div id="html_aca8dfb661ddd16d8470606ee0ec2f53" style="width: 100.0%; height: 100.0%;">     <b>Interconnessione tra SP81 e SP71 Lotto 1 - UF0.</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI - ZAMPEDRI LORENZO S.r.l. e IDROTECH S.r.l ed IMPRESA MAZZOTTI ROMUALDO S.p.a.<br>     <b>Totale:</b> € 12,957,500.0026<br>     <a href='website/10610209857723.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_3fef7b417dad11afa038f216ae2bf96b.setContent(html_aca8dfb661ddd16d8470606ee0ec2f53);
+            
+        
+
+        marker_0056da05dabb884ec75d13d78986d608.bindPopup(popup_3fef7b417dad11afa038f216ae2bf96b)
+        ;
+
+        
+    
+    
+            marker_0056da05dabb884ec75d13d78986d608.bindTooltip(
+                `<div>
+                     Interconnessione tra SP81 e SP71 Lotto 1 - UF0.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0056da05dabb884ec75d13d78986d608.setIcon(icon_1918b1dcf8202999225f0647df791d0f);
+            
+    
+            var marker_42a392f4b4bc81b86d422ad63312f0f9 = L.marker(
+                [46.248635, 11.337304],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_f7a2c6098d6cd7c5343ed9db24b6a6d1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3f8a3693705a8881964db0601abe3fc2 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_be31120f4a6220838f195abda6646898 = $(`<div id="html_be31120f4a6220838f195abda6646898" style="width: 100.0%; height: 100.0%;">     <b>Interconnessione tra SP81 e SP71 Lotto 2 - UF1.</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> NICOLODI COSTRUZIONI S.r.l.<br>     <b>Totale:</b> € 1,451,200.0011<br>     <a href='website/17167680177565.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_3f8a3693705a8881964db0601abe3fc2.setContent(html_be31120f4a6220838f195abda6646898);
+            
+        
+
+        marker_42a392f4b4bc81b86d422ad63312f0f9.bindPopup(popup_3f8a3693705a8881964db0601abe3fc2)
+        ;
+
+        
+    
+    
+            marker_42a392f4b4bc81b86d422ad63312f0f9.bindTooltip(
+                `<div>
+                     Interconnessione tra SP81 e SP71 Lotto 2 - UF1.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_42a392f4b4bc81b86d422ad63312f0f9.setIcon(icon_f7a2c6098d6cd7c5343ed9db24b6a6d1);
+            
+    
+            var marker_531fcc76d09ca545f46e495431e6023f = L.marker(
+                [46.247783, 11.333207],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_06e7c8d542b8bb7a7e96592c381920bb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2f498603dc29dc074209561d0a3b6d50 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_42ce00f3da24e9c697b99a836c9671e7 = $(`<div id="html_42ce00f3da24e9c697b99a836c9671e7" style="width: 100.0%; height: 100.0%;">     <b>Interconnessione tra SP81 e SP71 Lotto 3 - UF2.</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI - COSTRUZIONI S.R.L. e CTS S.R.L.<br>     <b>Totale:</b> € 1,378,700.0044<br>     <a href='website/27777890035288.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_2f498603dc29dc074209561d0a3b6d50.setContent(html_42ce00f3da24e9c697b99a836c9671e7);
+            
+        
+
+        marker_531fcc76d09ca545f46e495431e6023f.bindPopup(popup_2f498603dc29dc074209561d0a3b6d50)
+        ;
+
+        
+    
+    
+            marker_531fcc76d09ca545f46e495431e6023f.bindTooltip(
+                `<div>
+                     Interconnessione tra SP81 e SP71 Lotto 3 - UF2.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_531fcc76d09ca545f46e495431e6023f.setIcon(icon_06e7c8d542b8bb7a7e96592c381920bb);
+            
+    
+            var marker_bf38b4b98d402eb39afb227ea5380813 = L.marker(
+                [46.232813, 11.325777],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_7bda846bf98ef69662899c0664fdb3da = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_70521005c7fc53e05eae172d7600b3be = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d9e5240e3007a3d9d2b40ff9afe967d5 = $(`<div id="html_d9e5240e3007a3d9d2b40ff9afe967d5" style="width: 100.0%; height: 100.0%;">     <b>Interconnessione tra SP81 e SP71 Lotto 4 - UF3.</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI - GRUPPO ADIGE BITUMI S.p.a e C.T.S. Sr.l.<br>     <b>Totale:</b> € 4,405,600.0019<br>     <a href='website/44945570212853.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_70521005c7fc53e05eae172d7600b3be.setContent(html_d9e5240e3007a3d9d2b40ff9afe967d5);
+            
+        
+
+        marker_bf38b4b98d402eb39afb227ea5380813.bindPopup(popup_70521005c7fc53e05eae172d7600b3be)
+        ;
+
+        
+    
+    
+            marker_bf38b4b98d402eb39afb227ea5380813.bindTooltip(
+                `<div>
+                     Interconnessione tra SP81 e SP71 Lotto 4 - UF3.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bf38b4b98d402eb39afb227ea5380813.setIcon(icon_7bda846bf98ef69662899c0664fdb3da);
+            
+    
+            var marker_e68b14107e03692b2974ecec78e15a82 = L.marker(
+                [46.291105, 11.466105],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_c0946aedefe3a1e4fa7c64de16bd4ecc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_df9cdc1f0ec5dd367e11c6ff838a278d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f2a8c4be71e6e4a0db9718b9136676fc = $(`<div id="html_f2a8c4be71e6e4a0db9718b9136676fc" style="width: 100.0%; height: 100.0%;">     <b>Adeguamento deposito bus Cavalese e altri siti Lotto Funzionale 1: Cavalese.</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI D.F. Costruzioni S.r.l., Nord Costruzioni S.r.l. e Bertolini Ocea Impianti S.r.l.<br>     <b>Totale:</b> € 18,968,324.17<br>     <a href='website/190392490709135.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_df9cdc1f0ec5dd367e11c6ff838a278d.setContent(html_f2a8c4be71e6e4a0db9718b9136676fc);
+            
+        
+
+        marker_e68b14107e03692b2974ecec78e15a82.bindPopup(popup_df9cdc1f0ec5dd367e11c6ff838a278d)
+        ;
+
+        
+    
+    
+            marker_e68b14107e03692b2974ecec78e15a82.bindTooltip(
+                `<div>
+                     Adeguamento deposito bus Cavalese e altri siti Lotto Funzionale 1: Cavalese.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e68b14107e03692b2974ecec78e15a82.setIcon(icon_c0946aedefe3a1e4fa7c64de16bd4ecc);
+            
+    
+            var marker_dd7d93d8650ef60e5f588c22aaa86f7e = L.marker(
+                [46.430261, 11.686794],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_0d8bfb78c4595b838605e84c26e3ebe8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ad1952d1c6779468f1c804786868227 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_79e03ab6ade2a905be73ba4d09ae9c68 = $(`<div id="html_79e03ab6ade2a905be73ba4d09ae9c68" style="width: 100.0%; height: 100.0%;">     <b>Adeguamento deposito bus Cavalese e altri siti Lotto Funzionale 2: Sen Jean di Fassa.</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> MISCONEL SRL<br>     <b>Totale:</b> € 11,056,500.0012<br>     <a href='website/308061521170129.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_1ad1952d1c6779468f1c804786868227.setContent(html_79e03ab6ade2a905be73ba4d09ae9c68);
+            
+        
+
+        marker_dd7d93d8650ef60e5f588c22aaa86f7e.bindPopup(popup_1ad1952d1c6779468f1c804786868227)
+        ;
+
+        
+    
+    
+            marker_dd7d93d8650ef60e5f588c22aaa86f7e.bindTooltip(
+                `<div>
+                     Adeguamento deposito bus Cavalese e altri siti Lotto Funzionale 2: Sen Jean di Fassa.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dd7d93d8650ef60e5f588c22aaa86f7e.setIcon(icon_0d8bfb78c4595b838605e84c26e3ebe8);
+            
+    
+            var marker_40b58308594dd1a3976be61669110037 = L.marker(
+                [46.458261, 11.7972],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_f5b068a65dd0929d922cb54a40a77b95 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f185bb7c7ea604e183b5c3f488becff1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7bc367470b6780ceb20530d2c854150b = $(`<div id="html_7bc367470b6780ceb20530d2c854150b" style="width: 100.0%; height: 100.0%;">     <b>Adeguamento deposito bus Cavalese  e altri siti Lotto Funzionale 3: Penia (Canazei).</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI COSTRUZIONI ELETTRICHE GIOVANELLA S.R.L. - EDILFERRETTI S.R.L.<br>     <b>Totale:</b> € 2,148,200.0008<br>     <a href='website/498454011879264.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_f185bb7c7ea604e183b5c3f488becff1.setContent(html_7bc367470b6780ceb20530d2c854150b);
+            
+        
+
+        marker_40b58308594dd1a3976be61669110037.bindPopup(popup_f185bb7c7ea604e183b5c3f488becff1)
+        ;
+
+        
+    
+    
+            marker_40b58308594dd1a3976be61669110037.bindTooltip(
+                `<div>
+                     Adeguamento deposito bus Cavalese  e altri siti Lotto Funzionale 3: Penia (Canazei).
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_40b58308594dd1a3976be61669110037.setIcon(icon_f5b068a65dd0929d922cb54a40a77b95);
+            
+    
+            var marker_baf7b45631c2e113f98ead3e838c4d74 = L.marker(
+                [46.29599214970693, 11.588237362775532],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_a665cb4d72b31bc5077bc1f817c69f97 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_331bf8e526bb6384072587de80076016 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_71d8900f6e3ad96a32a237627e1b861c = $(`<div id="html_71d8900f6e3ad96a32a237627e1b861c" style="width: 100.0%; height: 100.0%;">     <b>Bus Rapid Transit - adeguamento sezione stradale - Materiale rotabile autoservizio e infrastruttura di ricarica </b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> POWERBUS SRL e YUTONG FRANCE SAS<br>     <b>Totale:</b> € 20,263,875.83<br>     <a href='website/806515533049393.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_331bf8e526bb6384072587de80076016.setContent(html_71d8900f6e3ad96a32a237627e1b861c);
+            
+        
+
+        marker_baf7b45631c2e113f98ead3e838c4d74.bindPopup(popup_331bf8e526bb6384072587de80076016)
+        ;
+
+        
+    
+    
+            marker_baf7b45631c2e113f98ead3e838c4d74.bindTooltip(
+                `<div>
+                     Bus Rapid Transit - adeguamento sezione stradale - Materiale rotabile autoservizio e infrastruttura di ricarica 
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_baf7b45631c2e113f98ead3e838c4d74.setIcon(icon_a665cb4d72b31bc5077bc1f817c69f97);
+            
+    
+            var marker_79710e3893bac48e07c125f0187e32be = L.marker(
+                [46.29599214970693, 11.588237362775532],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_41fcdee628aec2a0868ab1f2ebf3e2a9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cda77e08752ec5539773223ec7323587 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a46b955ed718344a667d1d03e71b5fb0 = $(`<div id="html_a46b955ed718344a667d1d03e71b5fb0" style="width: 100.0%; height: 100.0%;">     <b>Bus Rapid Transit - adeguamento sezione stradale - Bus urbani elettrici e Bus extraurbani.</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> POWERBUS SRL e YUTONG FRANCE SAS<br>     <b>Totale:</b> € 1,025,491.2999<br>     <a href='website/1304969544928657.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_cda77e08752ec5539773223ec7323587.setContent(html_a46b955ed718344a667d1d03e71b5fb0);
+            
+        
+
+        marker_79710e3893bac48e07c125f0187e32be.bindPopup(popup_cda77e08752ec5539773223ec7323587)
+        ;
+
+        
+    
+    
+            marker_79710e3893bac48e07c125f0187e32be.bindTooltip(
+                `<div>
+                     Bus Rapid Transit - adeguamento sezione stradale - Bus urbani elettrici e Bus extraurbani.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_79710e3893bac48e07c125f0187e32be.setIcon(icon_41fcdee628aec2a0868ab1f2ebf3e2a9);
+            
+    
+            var marker_5c8bd221ac3ed961824c6a58688fedc9 = L.marker(
+                [46.07522073238598, 11.12305128277938],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_f7e7600469a5844306724ff434c2057a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_285ee1585a4f6a85dc5b8ba29be1d675 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_68538bc56470127af1dde593084823e0 = $(`<div id="html_68538bc56470127af1dde593084823e0" style="width: 100.0%; height: 100.0%;">     <b>Acquisto treni elettrici o ibridi - Linea Trento Bassano Del Grappa*via linea Trento - Bassano Del Grappa</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> ALSTOM FERROVIARIA S.p.A. - HITACHI RAIL<br>     <b>Totale:</b> € 65,324,100.0<br>     <a href='website/3416454622906707.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_285ee1585a4f6a85dc5b8ba29be1d675.setContent(html_68538bc56470127af1dde593084823e0);
+            
+        
+
+        marker_5c8bd221ac3ed961824c6a58688fedc9.bindPopup(popup_285ee1585a4f6a85dc5b8ba29be1d675)
+        ;
+
+        
+    
+    
+            marker_5c8bd221ac3ed961824c6a58688fedc9.bindTooltip(
+                `<div>
+                     Acquisto treni elettrici o ibridi - Linea Trento Bassano Del Grappa*via linea Trento - Bassano Del Grappa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5c8bd221ac3ed961824c6a58688fedc9.setIcon(icon_f7e7600469a5844306724ff434c2057a);
+            
+    
+            var marker_eac51ac6984eae68ca0dbd2282664f37 = L.marker(
+                [46.07209928637346, 11.11949357760946],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_21daaa6ffeeb4b4b2d6ffd1f384b0a47 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_78e0247b4598df7e7ea480646336e1fe = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d7577ff82a21803a6346b41840fbe2f3 = $(`<div id="html_d7577ff82a21803a6346b41840fbe2f3" style="width: 100.0%; height: 100.0%;">     <b>Stazione ferroviaria di Trento - Adeguamento infrastrutturale</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> QUADRIO GAETANO COSTRUZIONI SPA, D’ADIUTORIO COSRTUZIONI S.P.A.<br>     <b>Totale:</b> € 31,541,916.48<br>     <a href='website/5527939700884757.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_78e0247b4598df7e7ea480646336e1fe.setContent(html_d7577ff82a21803a6346b41840fbe2f3);
+            
+        
+
+        marker_eac51ac6984eae68ca0dbd2282664f37.bindPopup(popup_78e0247b4598df7e7ea480646336e1fe)
+        ;
+
+        
+    
+    
+            marker_eac51ac6984eae68ca0dbd2282664f37.bindTooltip(
+                `<div>
+                     Stazione ferroviaria di Trento - Adeguamento infrastrutturale
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_eac51ac6984eae68ca0dbd2282664f37.setIcon(icon_21daaa6ffeeb4b4b2d6ffd1f384b0a47);
+            
+    
+            var marker_825a5802517c5ce92304c1829ee9b3de = L.marker(
+                [46.26763414583389, 12.301796868638116],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_282d6f6a74b65dbd32b96299cd5cca63 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9668d7976c45d88b728b8da7a730e21b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b05c06495fe776914cc3eb2587f9c130 = $(`<div id="html_b05c06495fe776914cc3eb2587f9c130" style="width: 100.0%; height: 100.0%;">     <b>Stazione di Longarone - Miglioramento accessibilità e velocizzazione itinerari</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI - SIELTE TRASPORTI srl PIEMME Impianti S.r.l.  ANTINOZZI S.r.l.<br>     <b>Totale:</b> € 12,087,401.73<br>     <a href='website/8944394323791464.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_9668d7976c45d88b728b8da7a730e21b.setContent(html_b05c06495fe776914cc3eb2587f9c130);
+            
+        
+
+        marker_825a5802517c5ce92304c1829ee9b3de.bindPopup(popup_9668d7976c45d88b728b8da7a730e21b)
+        ;
+
+        
+    
+    
+            marker_825a5802517c5ce92304c1829ee9b3de.bindTooltip(
+                `<div>
+                     Stazione di Longarone - Miglioramento accessibilità e velocizzazione itinerari
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_825a5802517c5ce92304c1829ee9b3de.setIcon(icon_282d6f6a74b65dbd32b96299cd5cca63);
+            
+    
+            var marker_b41eec751ca2be911abd025605d2c291 = L.marker(
+                [46.538003, 12.135427],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_da4774913512aa8792443285a1cade84 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_84be77fe987cf6a36d8db4f878f72b20 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_fde28cd2b80c6a66de59172b6d235974 = $(`<div id="html_fde28cd2b80c6a66de59172b6d235974" style="width: 100.0%; height: 100.0%;">     <b>Variante di Cortina - Lotto 0  Sistemazione Lungo Boite: Sistemazione del Corpo Stradale, Raddoppio del Ponte Corona, Riqualificazione Via Cesare Battisti</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI BONOTTO s.r.l e C.F.C SOC. COOP e DOLOMITI STRADE s.r.l<br>     <b>Totale:</b> € 20,909,281.73<br>     <a href='website/23416728348467685.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_84be77fe987cf6a36d8db4f878f72b20.setContent(html_fde28cd2b80c6a66de59172b6d235974);
+            
+        
+
+        marker_b41eec751ca2be911abd025605d2c291.bindPopup(popup_84be77fe987cf6a36d8db4f878f72b20)
+        ;
+
+        
+    
+    
+            marker_b41eec751ca2be911abd025605d2c291.bindTooltip(
+                `<div>
+                     Variante di Cortina - Lotto 0  Sistemazione Lungo Boite: Sistemazione del Corpo Stradale, Raddoppio del Ponte Corona, Riqualificazione Via Cesare Battisti
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b41eec751ca2be911abd025605d2c291.setIcon(icon_da4774913512aa8792443285a1cade84);
+            
+    
+            var marker_047b4000e7e5652bc680d29f2fb538de = L.marker(
+                [46.18023130655075, 12.284019949068732],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_edb111f97e70c082b301144152fe6442 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a3e4183dd58d13df01e3355c50ea1150 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_81b917bb17e0b8630d8644228677f95b = $(`<div id="html_81b917bb17e0b8630d8644228677f95b" style="width: 100.0%; height: 100.0%;">     <b>PRG di Ponte nelle Alpi</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> R.T.I. SIELTE Trasporti S.r.l. e  Piemme impianti s.r.l. e Antinozzi s.r.l.<br>     <b>Totale:</b> € 6,243,354.54<br>     <a href='website/99194853094755497.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_a3e4183dd58d13df01e3355c50ea1150.setContent(html_81b917bb17e0b8630d8644228677f95b);
+            
+        
+
+        marker_047b4000e7e5652bc680d29f2fb538de.bindPopup(popup_a3e4183dd58d13df01e3355c50ea1150)
+        ;
+
+        
+    
+    
+            marker_047b4000e7e5652bc680d29f2fb538de.bindTooltip(
+                `<div>
+                     PRG di Ponte nelle Alpi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_047b4000e7e5652bc680d29f2fb538de.setIcon(icon_edb111f97e70c082b301144152fe6442);
+            
+    
+            var marker_ece1f53c9984ec69d240f4550739c24d = L.marker(
+                [46.14150981864912, 12.21001564559725],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_6d371602b9d971aeceb99c0940e3c651 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a1cd43b6c77bec99f3a6885c8e4a2a5e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0d0a17c097306c96369eb11106040648 = $(`<div id="html_0d0a17c097306c96369eb11106040648" style="width: 100.0%; height: 100.0%;">     <b>Rinnovo stazioni/costruzione parcheggi di scambio Lotto 1 Stazione di Belluno</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> R.T.I. - VENETA 21 S.r.l., I.M.A.F. S.r.l., A.N.R. Edilizia & Impianti S.r.l.<br>     <b>Totale:</b> € 14,481,062.18<br>     <a href='website/160500643816367088.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_a1cd43b6c77bec99f3a6885c8e4a2a5e.setContent(html_0d0a17c097306c96369eb11106040648);
+            
+        
+
+        marker_ece1f53c9984ec69d240f4550739c24d.bindPopup(popup_a1cd43b6c77bec99f3a6885c8e4a2a5e)
+        ;
+
+        
+    
+    
+            marker_ece1f53c9984ec69d240f4550739c24d.bindTooltip(
+                `<div>
+                     Rinnovo stazioni/costruzione parcheggi di scambio Lotto 1 Stazione di Belluno
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ece1f53c9984ec69d240f4550739c24d.setIcon(icon_6d371602b9d971aeceb99c0940e3c651);
+            
+    
+            var marker_6e9866c0c479ccc3d4ceabea3ce787d2 = L.marker(
+                [46.012991, 11.911348],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_974ba76cd764680b363a03c613b4dcbd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2572d5f620e7dedf272554be5e873d41 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_80880eac34254660b582aded2c52e3af = $(`<div id="html_80880eac34254660b582aded2c52e3af" style="width: 100.0%; height: 100.0%;">     <b>Rinnovo stazioni/costruzione parcheggi di scambio Lotto 2 Stazione di Feltre</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> ATI - CAMAR SOCIETÀ COOPERATIVA, Consorziata Esecutrice ALLEGRINI S.r.l., e TECHNE S.p.A.<br>     <b>Totale:</b> € 2,977,571.19<br>     <a href='website/259695496911122585.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_2572d5f620e7dedf272554be5e873d41.setContent(html_80880eac34254660b582aded2c52e3af);
+            
+        
+
+        marker_6e9866c0c479ccc3d4ceabea3ce787d2.bindPopup(popup_2572d5f620e7dedf272554be5e873d41)
+        ;
+
+        
+    
+    
+            marker_6e9866c0c479ccc3d4ceabea3ce787d2.bindTooltip(
+                `<div>
+                     Rinnovo stazioni/costruzione parcheggi di scambio Lotto 2 Stazione di Feltre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6e9866c0c479ccc3d4ceabea3ce787d2.setIcon(icon_974ba76cd764680b363a03c613b4dcbd);
+            
+    
+            var marker_ed41d38c21ee7d19ae372a4013b8eac8 = L.marker(
+                [45.88726697188599, 9.359068492034304],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_d17c8f9366d76191cd13fd804e11e403 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ccf41a9762d733e71bb9f5f7e3cb4b24 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d0e6e4ac3dc696e3fb27ec53aa6ef6b1 = $(`<div id="html_d0e6e4ac3dc696e3fb27ec53aa6ef6b1" style="width: 100.0%; height: 100.0%;">     <b>Completamento percorso ciclabile Abbadia Lariana</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> RTI QUADRIO GAETANO COSTRUZIONI S.p.A. - ADRIACOS S.p.A. Società Benefit e DOLOMITI ROCCE S.r.l.<br>     <b>Totale:</b> € 31,955,199.996<br>     <a href='website/420196140727489673.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_ccf41a9762d733e71bb9f5f7e3cb4b24.setContent(html_d0e6e4ac3dc696e3fb27ec53aa6ef6b1);
+            
+        
+
+        marker_ed41d38c21ee7d19ae372a4013b8eac8.bindPopup(popup_ccf41a9762d733e71bb9f5f7e3cb4b24)
+        ;
+
+        
+    
+    
+            marker_ed41d38c21ee7d19ae372a4013b8eac8.bindTooltip(
+                `<div>
+                     Completamento percorso ciclabile Abbadia Lariana
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ed41d38c21ee7d19ae372a4013b8eac8.setIcon(icon_d17c8f9366d76191cd13fd804e11e403);
+            
+    
+            var marker_62923ef18b50f301db329cf669aef30b = L.marker(
+                [46.1658374776992, 9.6524991228155],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_50f7aa94f8650fe5e74ba3646ff7f0d1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_62f1a7e2be875c641916fd0ecb28cf39 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_35da697d8a7cbce9c6eec287ef761585 = $(`<div id="html_35da697d8a7cbce9c6eec287ef761585" style="width: 100.0%; height: 100.0%;">     <b>Interventi puntuali potenziamento - PRG sedi di incrocio</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> IMPRESA LUIGI NOTARI SPA - G.C.F. Generale Costruzioni Ferroviarie S.p.A., Valtellina S.p.A.<br>     <b>Totale:</b> € 33,672,100.0<br>     <a href='website/2880067194370816120.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_62f1a7e2be875c641916fd0ecb28cf39.setContent(html_35da697d8a7cbce9c6eec287ef761585);
+            
+        
+
+        marker_62923ef18b50f301db329cf669aef30b.bindPopup(popup_62f1a7e2be875c641916fd0ecb28cf39)
+        ;
+
+        
+    
+    
+            marker_62923ef18b50f301db329cf669aef30b.bindTooltip(
+                `<div>
+                     Interventi puntuali potenziamento - PRG sedi di incrocio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_62923ef18b50f301db329cf669aef30b.setIcon(icon_50f7aa94f8650fe5e74ba3646ff7f0d1);
+            
+    
+            var marker_ae0212f972ee0f3d0739a8e3c4fb7b40 = L.marker(
+                [46.16903, 9.922937],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_a35cbfe48a66d234b6b1de389ca34d01 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c7e55e8b24bca1395b464242f45a7cb3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_666231b33aca34480c9cb6b3a8f06772 = $(`<div id="html_666231b33aca34480c9cb6b3a8f06772" style="width: 100.0%; height: 100.0%;">     <b>Soppressione passaggi a livello insistenti su SS38 - Linea ferroviaria Milano -Tirano</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> INFRARAIL S.r.l. - RTI QUADRIO GAETANO COSTRUZIONI SPA/D’ADIUTORIO APPALTI E COSTRUZIONI SRL<br>     <b>Totale:</b> € 66,000,000.0<br>     <a href='website/4660046610375530309.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_c7e55e8b24bca1395b464242f45a7cb3.setContent(html_666231b33aca34480c9cb6b3a8f06772);
+            
+        
+
+        marker_ae0212f972ee0f3d0739a8e3c4fb7b40.bindPopup(popup_c7e55e8b24bca1395b464242f45a7cb3)
+        ;
+
+        
+    
+    
+            marker_ae0212f972ee0f3d0739a8e3c4fb7b40.bindTooltip(
+                `<div>
+                     Soppressione passaggi a livello insistenti su SS38 - Linea ferroviaria Milano -Tirano
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ae0212f972ee0f3d0739a8e3c4fb7b40.setIcon(icon_a35cbfe48a66d234b6b1de389ca34d01);
+            
+    
+            var marker_29d408c37bfdaff2acc4fc536d0f5d6b = L.marker(
+                [45.65072125307881, 8.721366688025743],
+                {
+}
+            ).addTo(feature_group_1e76c13df48ca460f55eba4173f2fd62);
+        
+    
+            var icon_4d184d98ddbf33f1833a3782e8ead2b0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_71c1fb4e256bee88aa762454edcdb996 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_bd1d0dd010337c7f84cecdcc15123644 = $(`<div id="html_bd1d0dd010337c7f84cecdcc15123644" style="width: 100.0%; height: 100.0%;">     <b>Collegamento alla rete ferroviaria nazionale</b><br>     <b>Fase:</b> in esecuzione<br>     <b>Aggiudicatario:</b> ATI - S.A.L.C. S.p.A. - VALSECCHI ARMAMENTO FERRROVIARIO S.r.l.<br>     <b>Totale:</b> € 264,553,700.0<br>     <a href='website/31940434634990099905.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_71c1fb4e256bee88aa762454edcdb996.setContent(html_bd1d0dd010337c7f84cecdcc15123644);
+            
+        
+
+        marker_29d408c37bfdaff2acc4fc536d0f5d6b.bindPopup(popup_71c1fb4e256bee88aa762454edcdb996)
+        ;
+
+        
+    
+    
+            marker_29d408c37bfdaff2acc4fc536d0f5d6b.bindTooltip(
+                `<div>
+                     Collegamento alla rete ferroviaria nazionale
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_29d408c37bfdaff2acc4fc536d0f5d6b.setIcon(icon_4d184d98ddbf33f1833a3782e8ead2b0);
+            
+    
+            feature_group_1e76c13df48ca460f55eba4173f2fd62.addTo(map_140a804e9459d652c52b894517a64b87);
+        
+    
+            var feature_group_023f8b5fe130440b555d269100d55122 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_87cc4230e74fdc524425088aafd22ae9 = L.marker(
+                [46.5215249983318, 10.120488249370938],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_6cfd9c1c0a6fbb2b73e4d866badc6b98 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e483c2fd660a87909c1411620784bd22 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_85b1077f4eee081165f82887f5dc7b29 = $(`<div id="html_85b1077f4eee081165f82887f5dc7b29" style="width: 100.0%; height: 100.0%;">     <b>Lavori ripristino e ristrutturazione venues di gara</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 1,008,000.0<br>     <a href='website/89.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_e483c2fd660a87909c1411620784bd22.setContent(html_85b1077f4eee081165f82887f5dc7b29);
+            
+        
+
+        marker_87cc4230e74fdc524425088aafd22ae9.bindPopup(popup_e483c2fd660a87909c1411620784bd22)
+        ;
+
+        
+    
+    
+            marker_87cc4230e74fdc524425088aafd22ae9.bindTooltip(
+                `<div>
+                     Lavori ripristino e ristrutturazione venues di gara
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_87cc4230e74fdc524425088aafd22ae9.setIcon(icon_6cfd9c1c0a6fbb2b73e4d866badc6b98);
+            
+    
+            var marker_444ea34d6afba6c5c246adf5a01cc0b5 = L.marker(
+                [45.40159683019978, 9.142649167311586],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_6ecf62104b6b7609f52a55b7c46ca5e4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6f3c17de081c9e3c7694e8a7aa299c3a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1e0e2bb6c233ef4ef5a988c996425fd9 = $(`<div id="html_1e0e2bb6c233ef4ef5a988c996425fd9" style="width: 100.0%; height: 100.0%;">     <b>Completamento parcheggio venue pattinaggio sul ghiaccio</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 1,764,000.0<br>     <a href='website/144.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_6f3c17de081c9e3c7694e8a7aa299c3a.setContent(html_1e0e2bb6c233ef4ef5a988c996425fd9);
+            
+        
+
+        marker_444ea34d6afba6c5c246adf5a01cc0b5.bindPopup(popup_6f3c17de081c9e3c7694e8a7aa299c3a)
+        ;
+
+        
+    
+    
+            marker_444ea34d6afba6c5c246adf5a01cc0b5.bindTooltip(
+                `<div>
+                     Completamento parcheggio venue pattinaggio sul ghiaccio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_444ea34d6afba6c5c246adf5a01cc0b5.setIcon(icon_6ecf62104b6b7609f52a55b7c46ca5e4);
+            
+    
+            var marker_d61dcb3ac6a5071f7c5b869b522d2bb7 = L.marker(
+                [46.48298738902492, 10.31819471744981],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_e16e04f21608ac947526714135eb1eb1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d49e28cf412ff8c4b6036ed069e0718f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6718da3a55a1823171b600d1c0824202 = $(`<div id="html_6718da3a55a1823171b600d1c0824202" style="width: 100.0%; height: 100.0%;">     <b>Adeguamenti venue biathlon</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 8,062,000.0<br>     <a href='website/233.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_d49e28cf412ff8c4b6036ed069e0718f.setContent(html_6718da3a55a1823171b600d1c0824202);
+            
+        
+
+        marker_d61dcb3ac6a5071f7c5b869b522d2bb7.bindPopup(popup_d49e28cf412ff8c4b6036ed069e0718f)
+        ;
+
+        
+    
+    
+            marker_d61dcb3ac6a5071f7c5b869b522d2bb7.bindTooltip(
+                `<div>
+                     Adeguamenti venue biathlon
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d61dcb3ac6a5071f7c5b869b522d2bb7.setIcon(icon_e16e04f21608ac947526714135eb1eb1);
+            
+    
+            var marker_545fbbbcfb11b7755c5a7bf91594f3d7 = L.marker(
+                [46.1260808292737, 11.252434737247498],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_067b33cde7f196a858ff1d28c19f9132 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0969f8d029363f4ed67f7107fe7cc09d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9c1b5089e3de24b52e0801635b0df35f = $(`<div id="html_9c1b5089e3de24b52e0801635b0df35f" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione impianto per il pattinaggio di velocità Lotto 3 - Realizzazione del nuovo spazio polivalente indoor e interventi di completamento</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 17,800,000.0<br>     <a href='website/46368.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_0969f8d029363f4ed67f7107fe7cc09d.setContent(html_9c1b5089e3de24b52e0801635b0df35f);
+            
+        
+
+        marker_545fbbbcfb11b7755c5a7bf91594f3d7.bindPopup(popup_0969f8d029363f4ed67f7107fe7cc09d)
+        ;
+
+        
+    
+    
+            marker_545fbbbcfb11b7755c5a7bf91594f3d7.bindTooltip(
+                `<div>
+                     Riqualificazione impianto per il pattinaggio di velocità Lotto 3 - Realizzazione del nuovo spazio polivalente indoor e interventi di completamento
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_545fbbbcfb11b7755c5a7bf91594f3d7.setIcon(icon_067b33cde7f196a858ff1d28c19f9132);
+            
+    
+            var marker_3f89eddae661cd439318ca04309eaab5 = L.marker(
+                [46.28214815184704, 11.52385227951603],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_390d3934b3da1b2a89ead1319dab0224 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4108057f03f21128823f12cb81cef634 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_787bba6a5dfc0c0da096186f5a124e94 = $(`<div id="html_787bba6a5dfc0c0da096186f5a124e94" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione Stadio per lo sci di Fondo Lotto Funzionale 4 - Realizzazione pista da skiroll</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 2,065,260.24<br>     <a href='website/514229.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_4108057f03f21128823f12cb81cef634.setContent(html_787bba6a5dfc0c0da096186f5a124e94);
+            
+        
+
+        marker_3f89eddae661cd439318ca04309eaab5.bindPopup(popup_4108057f03f21128823f12cb81cef634)
+        ;
+
+        
+    
+    
+            marker_3f89eddae661cd439318ca04309eaab5.bindTooltip(
+                `<div>
+                     Riqualificazione Stadio per lo sci di Fondo Lotto Funzionale 4 - Realizzazione pista da skiroll
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3f89eddae661cd439318ca04309eaab5.setIcon(icon_390d3934b3da1b2a89ead1319dab0224);
+            
+    
+            var marker_0ccf32d6dde1af5d40885ec140cec51c = L.marker(
+                [46.54521183249737, 12.12322113148918],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_03266b24bb548f9310eeb67e87bb1ff8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_63e1cb5cf4936d41d8a150b314d6f78a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2ed9bf3137accd086ccd103b5ec8e9a5 = $(`<div id="html_2ed9bf3137accd086ccd103b5ec8e9a5" style="width: 100.0%; height: 100.0%;">     <b>CORTINA SLIDING CENTRE - Percorso del Memoriale della vecchia pista Eugenio Monti</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 2,100,000.0<br>     <a href='website/9227465.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_63e1cb5cf4936d41d8a150b314d6f78a.setContent(html_2ed9bf3137accd086ccd103b5ec8e9a5);
+            
+        
+
+        marker_0ccf32d6dde1af5d40885ec140cec51c.bindPopup(popup_63e1cb5cf4936d41d8a150b314d6f78a)
+        ;
+
+        
+    
+    
+            marker_0ccf32d6dde1af5d40885ec140cec51c.bindTooltip(
+                `<div>
+                     CORTINA SLIDING CENTRE - Percorso del Memoriale della vecchia pista Eugenio Monti
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0ccf32d6dde1af5d40885ec140cec51c.setIcon(icon_03266b24bb548f9310eeb67e87bb1ff8);
+            
+    
+            var marker_f4b3b5b32252a46609edbe51e97c325c = L.marker(
+                [46.54521183249737, 12.12322113148918],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_d088c31d47385363faaef4bd6ad5fdc7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9ba96224c040a9e4c109f5120308a9dd = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_bbe7af06867dd36546fc87687e0a8a94 = $(`<div id="html_bbe7af06867dd36546fc87687e0a8a94" style="width: 100.0%; height: 100.0%;">     <b>CORTINA SLIDING CENTRE - Cortina Guest House - Realizzazione nuova foresteria per atleti</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 4,800,000.0<br>     <a href='website/14930352.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_9ba96224c040a9e4c109f5120308a9dd.setContent(html_bbe7af06867dd36546fc87687e0a8a94);
+            
+        
+
+        marker_f4b3b5b32252a46609edbe51e97c325c.bindPopup(popup_9ba96224c040a9e4c109f5120308a9dd)
+        ;
+
+        
+    
+    
+            marker_f4b3b5b32252a46609edbe51e97c325c.bindTooltip(
+                `<div>
+                     CORTINA SLIDING CENTRE - Cortina Guest House - Realizzazione nuova foresteria per atleti
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f4b3b5b32252a46609edbe51e97c325c.setIcon(icon_d088c31d47385363faaef4bd6ad5fdc7);
+            
+    
+            var marker_87ea49fe445c6312883e5832a141d6c0 = L.marker(
+                [46.53314914607808, 12.13610957899233],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_f4be8b01219b5020be7be097d7cfc9e8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5b8febf3c77115587c80266a4b5f73e7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9146b35a1b93ab1e2df8511fbe9001cd = $(`<div id="html_9146b35a1b93ab1e2df8511fbe9001cd" style="width: 100.0%; height: 100.0%;">     <b>Proposta di Partenariato pubblico privato nuovo sistema integrato di mobilità intermodale nel Comune di Cortina</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 105,537,194.46<br>     <a href='website/267914296.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_5b8febf3c77115587c80266a4b5f73e7.setContent(html_9146b35a1b93ab1e2df8511fbe9001cd);
+            
+        
+
+        marker_87ea49fe445c6312883e5832a141d6c0.bindPopup(popup_5b8febf3c77115587c80266a4b5f73e7)
+        ;
+
+        
+    
+    
+            marker_87ea49fe445c6312883e5832a141d6c0.bindTooltip(
+                `<div>
+                     Proposta di Partenariato pubblico privato nuovo sistema integrato di mobilità intermodale nel Comune di Cortina
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_87ea49fe445c6312883e5832a141d6c0.setIcon(icon_f4be8b01219b5020be7be097d7cfc9e8);
+            
+    
+            var marker_8696fec0822dada40c1afca0db541013 = L.marker(
+                [46.53692323793828, 12.136216153514924],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_034dc10bd7133cced4879f9394765cae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9619b4dc55bf2c079050dbe7f238053c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_58075aa3e0ec8f3c7047ec0ae7439b3d = $(`<div id="html_58075aa3e0ec8f3c7047ec0ae7439b3d" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione della piazza ex-Mercato nel Comune di Cortina d'Ampezzo (BL).</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 7,500,000.0<br>     <a href='website/1134903170.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_9619b4dc55bf2c079050dbe7f238053c.setContent(html_58075aa3e0ec8f3c7047ec0ae7439b3d);
+            
+        
+
+        marker_8696fec0822dada40c1afca0db541013.bindPopup(popup_9619b4dc55bf2c079050dbe7f238053c)
+        ;
+
+        
+    
+    
+            marker_8696fec0822dada40c1afca0db541013.bindTooltip(
+                `<div>
+                     Riqualificazione della piazza ex-Mercato nel Comune di Cortina d'Ampezzo (BL).
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8696fec0822dada40c1afca0db541013.setIcon(icon_034dc10bd7133cced4879f9394765cae);
+            
+    
+            var marker_11ddf185f26755c48d258de9877455f6 = L.marker(
+                [46.46804884037116, 10.37645517903512],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_b752aa871d506d667755036e2828e500 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d33e1708ee39cc9e71e01ad3b8ed4c3b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_cde9073079a1253e80a0c3430ca8f43c = $(`<div id="html_cde9073079a1253e80a0c3430ca8f43c" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione di immobili pubblici nel Comune di Bormio (SO).</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 6,000,000.0<br>     <a href='website/1836311903.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_d33e1708ee39cc9e71e01ad3b8ed4c3b.setContent(html_cde9073079a1253e80a0c3430ca8f43c);
+            
+        
+
+        marker_11ddf185f26755c48d258de9877455f6.bindPopup(popup_d33e1708ee39cc9e71e01ad3b8ed4c3b)
+        ;
+
+        
+    
+    
+            marker_11ddf185f26755c48d258de9877455f6.bindTooltip(
+                `<div>
+                     Riqualificazione di immobili pubblici nel Comune di Bormio (SO).
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_11ddf185f26755c48d258de9877455f6.setIcon(icon_b752aa871d506d667755036e2828e500);
+            
+    
+            var marker_304fe41196a1b0ada1d1b1fa286190f7 = L.marker(
+                [46.5322106, 10.1133986],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_458d309359c6e7fef1b06729526aa9fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3c5f134a75353221d4ecb68c74135953 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0b33d156906ae212723447c1fc374012 = $(`<div id="html_0b33d156906ae212723447c1fc374012" style="width: 100.0%; height: 100.0%;">     <b>Interventi per immobili pubblici nel Comune di Livigno (SO).</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 6,000,000.0<br>     <a href='website/2971215073.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_3c5f134a75353221d4ecb68c74135953.setContent(html_0b33d156906ae212723447c1fc374012);
+            
+        
+
+        marker_304fe41196a1b0ada1d1b1fa286190f7.bindPopup(popup_3c5f134a75353221d4ecb68c74135953)
+        ;
+
+        
+    
+    
+            marker_304fe41196a1b0ada1d1b1fa286190f7.bindTooltip(
+                `<div>
+                     Interventi per immobili pubblici nel Comune di Livigno (SO).
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_304fe41196a1b0ada1d1b1fa286190f7.setIcon(icon_458d309359c6e7fef1b06729526aa9fc);
+            
+    
+            var marker_79c11ecfbb002d6a4739855eb2c0bf52 = L.marker(
+                [46.080454, 11.0791564],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_1e8b21997748f20c7024ad989817630b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f3dea1bde7e6ccb811578cf725ebd7e5 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_eefef19ebc9a902aa9c787d5756ca2b7 = $(`<div id="html_eefef19ebc9a902aa9c787d5756ca2b7" style="width: 100.0%; height: 100.0%;">     <b>Interventi per immobili pubblici nella Provincia di Trento.</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 330,000.0<br>     <a href='website/4807526976.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_f3dea1bde7e6ccb811578cf725ebd7e5.setContent(html_eefef19ebc9a902aa9c787d5756ca2b7);
+            
+        
+
+        marker_79c11ecfbb002d6a4739855eb2c0bf52.bindPopup(popup_f3dea1bde7e6ccb811578cf725ebd7e5)
+        ;
+
+        
+    
+    
+            marker_79c11ecfbb002d6a4739855eb2c0bf52.bindTooltip(
+                `<div>
+                     Interventi per immobili pubblici nella Provincia di Trento.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_79c11ecfbb002d6a4739855eb2c0bf52.setIcon(icon_1e8b21997748f20c7024ad989817630b);
+            
+    
+            var marker_4a70e39951f21d24440bde1f144da998 = L.marker(
+                [46.789608, 11.86678],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_81ecf90629e44f6ea8a5c07b68aa002c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_094bef33d6c17e411f8c7736bb894ea8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ec613d8f7994962f6fc74da611c354fd = $(`<div id="html_ec613d8f7994962f6fc74da611c354fd" style="width: 100.0%; height: 100.0%;">     <b>Ampliamento stradale con terza corsia alternata SS49</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 9,772,139.98<br>     <a href='website/591286729879.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_094bef33d6c17e411f8c7736bb894ea8.setContent(html_ec613d8f7994962f6fc74da611c354fd);
+            
+        
+
+        marker_4a70e39951f21d24440bde1f144da998.bindPopup(popup_094bef33d6c17e411f8c7736bb894ea8)
+        ;
+
+        
+    
+    
+            marker_4a70e39951f21d24440bde1f144da998.bindTooltip(
+                `<div>
+                     Ampliamento stradale con terza corsia alternata SS49
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4a70e39951f21d24440bde1f144da998.setIcon(icon_81ecf90629e44f6ea8a5c07b68aa002c);
+            
+    
+            var marker_9f28f7a371c75c668c87faaaaff22629 = L.marker(
+                [46.725412, 12.240002],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_639a276836c9448f30c8c7e074bbfecb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_301835de56cdebf6a7f93d71417eb770 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5b2c70586e20127fdba2d0e33c70c6ed = $(`<div id="html_5b2c70586e20127fdba2d0e33c70c6ed" style="width: 100.0%; height: 100.0%;">     <b>Nuovo collegamento con circonvallazione di Dobbiaco.</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 20,807,181.51<br>     <a href='website/956722026041.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_301835de56cdebf6a7f93d71417eb770.setContent(html_5b2c70586e20127fdba2d0e33c70c6ed);
+            
+        
+
+        marker_9f28f7a371c75c668c87faaaaff22629.bindPopup(popup_301835de56cdebf6a7f93d71417eb770)
+        ;
+
+        
+    
+    
+            marker_9f28f7a371c75c668c87faaaaff22629.bindTooltip(
+                `<div>
+                     Nuovo collegamento con circonvallazione di Dobbiaco.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9f28f7a371c75c668c87faaaaff22629.setIcon(icon_639a276836c9448f30c8c7e074bbfecb);
+            
+    
+            var marker_214f74b9c7f2b38177f99da82aff6a9e = L.marker(
+                [46.729642, 12.264312],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_8f1a9bb868137003b4b0ffbd64133f6e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e433f3ac33bd853c2d55a84127bb8c61 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_67ce9f9c12cbbd3b464a46a2b50ddb65 = $(`<div id="html_67ce9f9c12cbbd3b464a46a2b50ddb65" style="width: 100.0%; height: 100.0%;">     <b>Eliminazione passaggio a livello con sottopasso ferroviario - San Candido.</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 18,287,154.93<br>     <a href='website/2504730781961.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_e433f3ac33bd853c2d55a84127bb8c61.setContent(html_67ce9f9c12cbbd3b464a46a2b50ddb65);
+            
+        
+
+        marker_214f74b9c7f2b38177f99da82aff6a9e.bindPopup(popup_e433f3ac33bd853c2d55a84127bb8c61)
+        ;
+
+        
+    
+    
+            marker_214f74b9c7f2b38177f99da82aff6a9e.bindTooltip(
+                `<div>
+                     Eliminazione passaggio a livello con sottopasso ferroviario - San Candido.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_214f74b9c7f2b38177f99da82aff6a9e.setIcon(icon_8f1a9bb868137003b4b0ffbd64133f6e);
+            
+    
+            var marker_3a8f8638f2b2a287d96e5c857708d43a = L.marker(
+                [46.232765, 11.322666],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_36fde31ecf7cacc2dc51db565f2326fb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d3cb97807f02c39f774c4f6d547c1a40 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_51ddb71fa19fd36c6b5a0a03faeb2ded = $(`<div id="html_51ddb71fa19fd36c6b5a0a03faeb2ded" style="width: 100.0%; height: 100.0%;">     <b>Interconnessione tra SP81 e SP71 Lotto 5 - UF4.</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 1,808,900.0<br>     <a href='website/72723460248141.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_d3cb97807f02c39f774c4f6d547c1a40.setContent(html_51ddb71fa19fd36c6b5a0a03faeb2ded);
+            
+        
+
+        marker_3a8f8638f2b2a287d96e5c857708d43a.bindPopup(popup_d3cb97807f02c39f774c4f6d547c1a40)
+        ;
+
+        
+    
+    
+            marker_3a8f8638f2b2a287d96e5c857708d43a.bindTooltip(
+                `<div>
+                     Interconnessione tra SP81 e SP71 Lotto 5 - UF4.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3a8f8638f2b2a287d96e5c857708d43a.setIcon(icon_36fde31ecf7cacc2dc51db565f2326fb);
+            
+    
+            var marker_fa63b526cdfbc410a90bd04ec6129c3d = L.marker(
+                [46.228336, 11.319631],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_2db642d99690c2e70fef89b9a2b5eef6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6b77b8d32eed26d4b1003fffb24b71e4 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_adc39e6adf7711063bdfc8b03d8d0ba5 = $(`<div id="html_adc39e6adf7711063bdfc8b03d8d0ba5" style="width: 100.0%; height: 100.0%;">     <b>Interconnessione tra SP81 e SP71 Lotto 6 - UF5.</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 4,569,411.18<br>     <a href='website/117669030460994.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_6b77b8d32eed26d4b1003fffb24b71e4.setContent(html_adc39e6adf7711063bdfc8b03d8d0ba5);
+            
+        
+
+        marker_fa63b526cdfbc410a90bd04ec6129c3d.bindPopup(popup_6b77b8d32eed26d4b1003fffb24b71e4)
+        ;
+
+        
+    
+    
+            marker_fa63b526cdfbc410a90bd04ec6129c3d.bindTooltip(
+                `<div>
+                     Interconnessione tra SP81 e SP71 Lotto 6 - UF5.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fa63b526cdfbc410a90bd04ec6129c3d.setIcon(icon_2db642d99690c2e70fef89b9a2b5eef6);
+            
+    
+            var marker_f7221a80e555da4feb79e75717a1b554 = L.marker(
+                [46.29599214970693, 11.588237362775532],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_c682d252232e52631764a9994cedce5a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8551531a527639e499d99898659c2398 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0760e8e0cb19edf23a7e763c49598df0 = $(`<div id="html_0760e8e0cb19edf23a7e763c49598df0" style="width: 100.0%; height: 100.0%;">     <b>Bus Rapid Transit - adeguamento sezione stradale: S-993.</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 72,341,977.52000001<br>     <a href='website/2111485077978050.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_8551531a527639e499d99898659c2398.setContent(html_0760e8e0cb19edf23a7e763c49598df0);
+            
+        
+
+        marker_f7221a80e555da4feb79e75717a1b554.bindPopup(popup_8551531a527639e499d99898659c2398)
+        ;
+
+        
+    
+    
+            marker_f7221a80e555da4feb79e75717a1b554.bindTooltip(
+                `<div>
+                     Bus Rapid Transit - adeguamento sezione stradale: S-993.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f7221a80e555da4feb79e75717a1b554.setIcon(icon_c682d252232e52631764a9994cedce5a);
+            
+    
+            var marker_4fd0383ed487ef98e9be016e533bd568 = L.marker(
+                [46.27993267109659, 12.30416921699804],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_0e0db8e4ce1b9b4356b2ace45b3ca3c1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7837ba9bc73c0eec70ef0fc19238ff53 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b8edd03a0dd349e928685827b23c81bd = $(`<div id="html_b8edd03a0dd349e928685827b23c81bd" style="width: 100.0%; height: 100.0%;">     <b>Variante di Longarone</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 395,928,984.0006<br>     <a href='website/14472334024676221.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_7837ba9bc73c0eec70ef0fc19238ff53.setContent(html_b8edd03a0dd349e928685827b23c81bd);
+            
+        
+
+        marker_4fd0383ed487ef98e9be016e533bd568.bindPopup(popup_7837ba9bc73c0eec70ef0fc19238ff53)
+        ;
+
+        
+    
+    
+            marker_4fd0383ed487ef98e9be016e533bd568.bindTooltip(
+                `<div>
+                     Variante di Longarone
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4fd0383ed487ef98e9be016e533bd568.setIcon(icon_0e0db8e4ce1b9b4356b2ace45b3ca3c1);
+            
+    
+            var marker_d0fbdd5919698616035109b16294ab70 = L.marker(
+                [46.53032902737473, 12.13904752475316],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_328b91fbdf77aa286883a3b147d9dce4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ab3b81114b359c0ba9afdccd06e78ce0 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2604992f9eacce5644a95c5d93a9217f = $(`<div id="html_2604992f9eacce5644a95c5d93a9217f" style="width: 100.0%; height: 100.0%;">     <b>Variante di Cortina - Lotto 1 Bretella di penetrazione a SUD di Cortina</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 51,861,899.9996<br>     <a href='website/37889062373143906.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_ab3b81114b359c0ba9afdccd06e78ce0.setContent(html_2604992f9eacce5644a95c5d93a9217f);
+            
+        
+
+        marker_d0fbdd5919698616035109b16294ab70.bindPopup(popup_ab3b81114b359c0ba9afdccd06e78ce0)
+        ;
+
+        
+    
+    
+            marker_d0fbdd5919698616035109b16294ab70.bindTooltip(
+                `<div>
+                     Variante di Cortina - Lotto 1 Bretella di penetrazione a SUD di Cortina
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d0fbdd5919698616035109b16294ab70.setIcon(icon_328b91fbdf77aa286883a3b147d9dce4);
+            
+    
+            var marker_ba257b0f21be027a4f9456a2c7b13f4f = L.marker(
+                [46.538387, 12.116915],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_0b4f3b33801775871c83906c182205dd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_df8e90c165d910765538bc507463801a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c3cddcbe23d10a912d0ce3f9decd44f9 = $(`<div id="html_c3cddcbe23d10a912d0ce3f9decd44f9" style="width: 100.0%; height: 100.0%;">     <b>Variante di Cortina - Lotto 2 Canne stradali gallerie e opera di difesa della SS51 a NORD di Cortina</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 483,207,800.0012<br>     <a href='website/61305790721611591.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_df8e90c165d910765538bc507463801a.setContent(html_c3cddcbe23d10a912d0ce3f9decd44f9);
+            
+        
+
+        marker_ba257b0f21be027a4f9456a2c7b13f4f.bindPopup(popup_df8e90c165d910765538bc507463801a)
+        ;
+
+        
+    
+    
+            marker_ba257b0f21be027a4f9456a2c7b13f4f.bindTooltip(
+                `<div>
+                     Variante di Cortina - Lotto 2 Canne stradali gallerie e opera di difesa della SS51 a NORD di Cortina
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ba257b0f21be027a4f9456a2c7b13f4f.setIcon(icon_0b4f3b33801775871c83906c182205dd);
+            
+    
+            var marker_d0954294b7f51f9f40c68aad9d6c0a5d = L.marker(
+                [45.64291065727686, 8.791892272882437],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_ae0d9fea0ad98c8a53d5036f17a90455 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dfeea738c4b64aa90c976ff428833ad8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c628bf890565d5c5fa6d1d3444471bd2 = $(`<div id="html_c628bf890565d5c5fa6d1d3444471bd2" style="width: 100.0%; height: 100.0%;">     <b>Riqualificazione Busto Arsizio/Gallarate/Cardano</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 56,090,500.0016<br>     <a href='website/679891637638612258.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_dfeea738c4b64aa90c976ff428833ad8.setContent(html_c628bf890565d5c5fa6d1d3444471bd2);
+            
+        
+
+        marker_d0954294b7f51f9f40c68aad9d6c0a5d.bindPopup(popup_dfeea738c4b64aa90c976ff428833ad8)
+        ;
+
+        
+    
+    
+            marker_d0954294b7f51f9f40c68aad9d6c0a5d.bindTooltip(
+                `<div>
+                     Riqualificazione Busto Arsizio/Gallarate/Cardano
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d0954294b7f51f9f40c68aad9d6c0a5d.setIcon(icon_ae0d9fea0ad98c8a53d5036f17a90455);
+            
+    
+            var marker_3d96b90dee5d6ea32da450ed343c94bf = L.marker(
+                [46.16215396022711, 9.830666928401016],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_ac21c9f22eec3c59a997bf572e674f42 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e2cff1e4fa44b7562aeb1a29b3c954b7 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_143578b145348a5da480be46b8df9f31 = $(`<div id="html_143578b145348a5da480be46b8df9f31" style="width: 100.0%; height: 100.0%;">     <b>Nodo di Castione Andevenno noto come svincolo di Sassella</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 21,411,800.0014<br>     <a href='website/1100087778366101931.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_e2cff1e4fa44b7562aeb1a29b3c954b7.setContent(html_143578b145348a5da480be46b8df9f31);
+            
+        
+
+        marker_3d96b90dee5d6ea32da450ed343c94bf.bindPopup(popup_e2cff1e4fa44b7562aeb1a29b3c954b7)
+        ;
+
+        
+    
+    
+            marker_3d96b90dee5d6ea32da450ed343c94bf.bindTooltip(
+                `<div>
+                     Nodo di Castione Andevenno noto come svincolo di Sassella
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3d96b90dee5d6ea32da450ed343c94bf.setIcon(icon_ac21c9f22eec3c59a997bf572e674f42);
+            
+    
+            var marker_7e35c230b1fa903021691114fe237fc0 = L.marker(
+                [46.25721284894058, 10.57457287366771],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_263b5b168765ab81ee19bc32a48ff350 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4dade061335595e700532aa820f55ade = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a6ab2fa5cf29706c6d9f584ee00a0f96 = $(`<div id="html_a6ab2fa5cf29706c6d9f584ee00a0f96" style="width: 100.0%; height: 100.0%;">     <b>Realizzazione di una galleria artificiale e viabilità accessoria Lotto 1 Case Sparse presso il Passo del Tonale</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 16,328,999.9982<br>     <a href='website/7540113804746346429.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_4dade061335595e700532aa820f55ade.setContent(html_a6ab2fa5cf29706c6d9f584ee00a0f96);
+            
+        
+
+        marker_7e35c230b1fa903021691114fe237fc0.bindPopup(popup_4dade061335595e700532aa820f55ade)
+        ;
+
+        
+    
+    
+            marker_7e35c230b1fa903021691114fe237fc0.bindTooltip(
+                `<div>
+                     Realizzazione di una galleria artificiale e viabilità accessoria Lotto 1 Case Sparse presso il Passo del Tonale
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7e35c230b1fa903021691114fe237fc0.setIcon(icon_263b5b168765ab81ee19bc32a48ff350);
+            
+    
+            var marker_e8d525fe7941cb5b730cff67eb088e5b = L.marker(
+                [46.258631, 10.518002],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_5ec1d7f3e802f1f7a6efe93bae17370c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f77bac06e100d71cefc20a85261120fd = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_467f53f1514398c65765470fc07e5eac = $(`<div id="html_467f53f1514398c65765470fc07e5eac" style="width: 100.0%; height: 100.0%;">     <b>Realizzazione di una galleria artificiale Lotto 2 Cida di Ponte di Legno</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 62,640,199.9993<br>     <a href='website/12200160415121876738.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_f77bac06e100d71cefc20a85261120fd.setContent(html_467f53f1514398c65765470fc07e5eac);
+            
+        
+
+        marker_e8d525fe7941cb5b730cff67eb088e5b.bindPopup(popup_f77bac06e100d71cefc20a85261120fd)
+        ;
+
+        
+    
+    
+            marker_e8d525fe7941cb5b730cff67eb088e5b.bindTooltip(
+                `<div>
+                     Realizzazione di una galleria artificiale Lotto 2 Cida di Ponte di Legno
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e8d525fe7941cb5b730cff67eb088e5b.setIcon(icon_5ec1d7f3e802f1f7a6efe93bae17370c);
+            
+    
+            var marker_30cd0edc95b265b43ca2ce9e80f60b72 = L.marker(
+                [46.16890215989487, 9.904579181459347],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_cbe03ac0d27ef02e68f6eb61a78022bf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_58ca9d7a85b14b2e136d67d3a9d4f546 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1af93764445746b64624e3222bca6809 = $(`<div id="html_1af93764445746b64624e3222bca6809" style="width: 100.0%; height: 100.0%;">     <b>Tangenziale sud di Sondrio</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 43,513,234.44<br>     <a href='website/19740274219868223167.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_58ca9d7a85b14b2e136d67d3a9d4f546.setContent(html_1af93764445746b64624e3222bca6809);
+            
+        
+
+        marker_30cd0edc95b265b43ca2ce9e80f60b72.bindPopup(popup_58ca9d7a85b14b2e136d67d3a9d4f546)
+        ;
+
+        
+    
+    
+            marker_30cd0edc95b265b43ca2ce9e80f60b72.bindTooltip(
+                `<div>
+                     Tangenziale sud di Sondrio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_30cd0edc95b265b43ca2ce9e80f60b72.setIcon(icon_cbe03ac0d27ef02e68f6eb61a78022bf);
+            
+    
+            var marker_79412b52056e2aa2ec86d3be4c118f2e = L.marker(
+                [45.684445, 9.841327],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_df0343fb85e5c1556f8f344b1cb1490b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a5d6907699b5d356371e8adb4100deb2 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9c3bff93976d44266338c2c74449ccab = $(`<div id="html_9c3bff93976d44266338c2c74449ccab" style="width: 100.0%; height: 100.0%;">     <b>Variante Trescore Entratico Lotto 1 Comune di Trescore Balneario</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 47,698,302.1721<br>     <a href='website/51680708854858323072.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_a5d6907699b5d356371e8adb4100deb2.setContent(html_9c3bff93976d44266338c2c74449ccab);
+            
+        
+
+        marker_79412b52056e2aa2ec86d3be4c118f2e.bindPopup(popup_a5d6907699b5d356371e8adb4100deb2)
+        ;
+
+        
+    
+    
+            marker_79412b52056e2aa2ec86d3be4c118f2e.bindTooltip(
+                `<div>
+                     Variante Trescore Entratico Lotto 1 Comune di Trescore Balneario
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_79412b52056e2aa2ec86d3be4c118f2e.setIcon(icon_df0343fb85e5c1556f8f344b1cb1490b);
+            
+    
+            var marker_3431ce003d0c4d33b362bd3a5e04ee92 = L.marker(
+                [45.69603470362555, 9.85794453558881],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_6b73768e9791098f4c80f26e415271ac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_35b70c4ed593420d04f66d2e954b9a12 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_44bfcdb85296db7b592bdcf9c6366d8b = $(`<div id="html_44bfcdb85296db7b592bdcf9c6366d8b" style="width: 100.0%; height: 100.0%;">     <b>Variante Trescore Entratico Lotto 2 Comune di Entratico</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 179,248,233.9209<br>     <a href='website/83621143489848422977.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_35b70c4ed593420d04f66d2e954b9a12.setContent(html_44bfcdb85296db7b592bdcf9c6366d8b);
+            
+        
+
+        marker_3431ce003d0c4d33b362bd3a5e04ee92.bindPopup(popup_35b70c4ed593420d04f66d2e954b9a12)
+        ;
+
+        
+    
+    
+            marker_3431ce003d0c4d33b362bd3a5e04ee92.bindTooltip(
+                `<div>
+                     Variante Trescore Entratico Lotto 2 Comune di Entratico
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3431ce003d0c4d33b362bd3a5e04ee92.setIcon(icon_6b73768e9791098f4c80f26e415271ac);
+            
+    
+            var marker_b6e9c4f0b9f752abee0e735a278828d0 = L.marker(
+                [45.79921331287034, 9.42672213982666],
+                {
+}
+            ).addTo(feature_group_023f8b5fe130440b555d269100d55122);
+        
+    
+            var icon_25ced2d86fdbb64cf5d5cef31936a986 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_695c0b5f516a557f6319be076ece1a82 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_81d8235dc998120e687c0fd9440a9f8a = $(`<div id="html_81d8235dc998120e687c0fd9440a9f8a" style="width: 100.0%; height: 100.0%;">     <b>Variante di Vercurago Lotto SAN GEROLAMO</b><br>     <b>Fase:</b> in progettazione<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 253,289,599.9995<br>     <a href='website/135301852344706746049.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_695c0b5f516a557f6319be076ece1a82.setContent(html_81d8235dc998120e687c0fd9440a9f8a);
+            
+        
+
+        marker_b6e9c4f0b9f752abee0e735a278828d0.bindPopup(popup_695c0b5f516a557f6319be076ece1a82)
+        ;
+
+        
+    
+    
+            marker_b6e9c4f0b9f752abee0e735a278828d0.bindTooltip(
+                `<div>
+                     Variante di Vercurago Lotto SAN GEROLAMO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b6e9c4f0b9f752abee0e735a278828d0.setIcon(icon_25ced2d86fdbb64cf5d5cef31936a986);
+            
+    
+            feature_group_023f8b5fe130440b555d269100d55122.addTo(map_140a804e9459d652c52b894517a64b87);
+        
+    
+            var feature_group_e7a76285298f9191032bae7f81c0094f = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_e8b0ad8bb6e272669fd4e7f399e363af = L.marker(
+                [46.523175, 10.122721],
+                {
+}
+            ).addTo(feature_group_e7a76285298f9191032bae7f81c0094f);
+        
+    
+            var icon_25d5b017b0822a530d8844e12b3e7512 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7008a36ee8bb837c20b069403e27c10d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d697be739dec0b314d76458501da3c2c = $(`<div id="html_d697be739dec0b314d76458501da3c2c" style="width: 100.0%; height: 100.0%;">     <b>Collegamento dei versanti con realizzazione di parcheggio presso stazione intermedia</b><br>     <b>Fase:</b> in gara<br>     <b>Aggiudicatario:</b> ---<br>     <b>Totale:</b> € 43,756,200.0<br>     <a href='website/139583862445.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_7008a36ee8bb837c20b069403e27c10d.setContent(html_d697be739dec0b314d76458501da3c2c);
+            
+        
+
+        marker_e8b0ad8bb6e272669fd4e7f399e363af.bindPopup(popup_7008a36ee8bb837c20b069403e27c10d)
+        ;
+
+        
+    
+    
+            marker_e8b0ad8bb6e272669fd4e7f399e363af.bindTooltip(
+                `<div>
+                     Collegamento dei versanti con realizzazione di parcheggio presso stazione intermedia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e8b0ad8bb6e272669fd4e7f399e363af.setIcon(icon_25d5b017b0822a530d8844e12b3e7512);
+            
+    
+            var marker_d606357387198becf89a7d1f006555a5 = L.marker(
+                [46.77261998578278, 12.04156222564245],
+                {
+}
+            ).addTo(feature_group_e7a76285298f9191032bae7f81c0094f);
+        
+    
+            var icon_2855ff4b89404f5b3a01e11863a586f8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_73651a4d494e93b883f291179727e7e3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9114d7ba168042ac7c7bbee494597a3f = $(`<div id="html_9114d7ba168042ac7c7bbee494597a3f" style="width: 100.0%; height: 100.0%;">     <b>Intervento stradale su incrocio ed accesso ad Anterselva.</b><br>     <b>Fase:</b> in gara<br>     <b>Aggiudicatario:</b> RTI Unionbau AG - Brunner & Leiter GmbH<br>     <b>Totale:</b> € 31,339,268.39<br>     <a href='website/365435296162.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_73651a4d494e93b883f291179727e7e3.setContent(html_9114d7ba168042ac7c7bbee494597a3f);
+            
+        
+
+        marker_d606357387198becf89a7d1f006555a5.bindPopup(popup_73651a4d494e93b883f291179727e7e3)
+        ;
+
+        
+    
+    
+            marker_d606357387198becf89a7d1f006555a5.bindTooltip(
+                `<div>
+                     Intervento stradale su incrocio ed accesso ad Anterselva.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d606357387198becf89a7d1f006555a5.setIcon(icon_2855ff4b89404f5b3a01e11863a586f8);
+            
+    
+            var marker_560994273d3f368f283532cdccd95241 = L.marker(
+                [46.08294440865737, 9.314216389476444],
+                {
+}
+            ).addTo(feature_group_e7a76285298f9191032bae7f81c0094f);
+        
+    
+            var icon_31954c67c7dff0b3d7d71035655d0c2e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "glyphicon-map-marker",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_99d9b8c6f0c9e97c2063eb8f7cfeb722 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_9e16357d532ad9e34796fbd413395bbd = $(`<div id="html_9e16357d532ad9e34796fbd413395bbd" style="width: 100.0%; height: 100.0%;">     <b>Potenziamento svincolo località Dervio</b><br>     <b>Fase:</b> in gara<br>     <b>Aggiudicatario:</b>  T.M.G. SCAVI S.R.L.<br>     <b>Totale:</b> € 48,502,200.0019<br>     <a href='website/1779979416004714189.html'>Scheda dettagliata</a>     </div>`)[0];
+                popup_99d9b8c6f0c9e97c2063eb8f7cfeb722.setContent(html_9e16357d532ad9e34796fbd413395bbd);
+            
+        
+
+        marker_560994273d3f368f283532cdccd95241.bindPopup(popup_99d9b8c6f0c9e97c2063eb8f7cfeb722)
+        ;
+
+        
+    
+    
+            marker_560994273d3f368f283532cdccd95241.bindTooltip(
+                `<div>
+                     Potenziamento svincolo località Dervio
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_560994273d3f368f283532cdccd95241.setIcon(icon_31954c67c7dff0b3d7d71035655d0c2e);
+            
+    
+            feature_group_e7a76285298f9191032bae7f81c0094f.addTo(map_140a804e9459d652c52b894517a64b87);
+        
+    
+            var layer_control_5e28de7f9f0068c297231e5ec49fb27b_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_e01539cf258589506d6127e2913b7036,
+                },
+                overlays :  {
+                    "concluso" : feature_group_fd698fe77c8983137cf294a5d27095de,
+                    "in esecuzione" : feature_group_1e76c13df48ca460f55eba4173f2fd62,
+                    "in progettazione" : feature_group_023f8b5fe130440b555d269100d55122,
+                    "in gara" : feature_group_e7a76285298f9191032bae7f81c0094f,
+                },
+            };
+            let layer_control_5e28de7f9f0068c297231e5ec49fb27b = L.control.layers(
+                layer_control_5e28de7f9f0068c297231e5ec49fb27b_layers.base_layers,
+                layer_control_5e28de7f9f0068c297231e5ec49fb27b_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_140a804e9459d652c52b894517a64b87);
+
+        
+</script>
+</html>
