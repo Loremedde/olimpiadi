@@ -5,45 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Report dati Olimpiadi</title>
   <style>
-    /* Reset e base */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       background: #fafafa;
-      color: #222;
+      color: #111;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       min-height: 100vh;
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
     }
 
     header {
-      max-width: 800px;
-      margin-bottom: 2.5rem;
+      max-width: 900px;
+      margin-bottom: 2rem;
     }
 
     h1 {
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       letter-spacing: 0.5px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin: 1.2rem 0 0.5rem;
+      color: #333;
     }
 
     p {
       font-size: 1rem;
       color: #555;
       line-height: 1.6;
+      margin-bottom: 0.8rem;
     }
 
-    /* Pulsante principale */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 2rem auto;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .stat-box {
+      border: 2px solid #000;
+      background: #fff;
+      padding: 1.5rem 1rem;
+      border-radius: 6px;
+      transition: transform 0.2s ease;
+    }
+
+    .stat-box:hover {
+      transform: scale(1.02);
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
     a.button {
       display: inline-block;
       margin-top: 2rem;
-      padding: 0.9rem 2rem;
-      border: 2px solid #222;
-      color: #222;
+      padding: 0.9rem 2.2rem;
+      border: 2px solid #000;
+      color: #000;
       text-decoration: none;
       font-size: 1rem;
       font-weight: 600;
@@ -52,30 +89,26 @@
     }
 
     a.button:hover {
-      background: #222;
+      background: #000;
       color: #fff;
     }
 
     footer {
-      position: absolute;
-      bottom: 1rem;
+      margin-top: 3rem;
       font-size: 0.85rem;
-      color: #888;
+      color: #777;
+    }
+
+    a.link {
+      color: inherit;
+      text-decoration: underline;
     }
 
     /* Responsive */
     @media (max-width: 600px) {
-      body {
-        padding: 1.5rem;
-      }
-
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      a.button {
-        width: 80%;
-      }
+      h1 { font-size: 1.9rem; }
+      .stat-value { font-size: 1.6rem; }
+      body { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -83,17 +116,52 @@
 
   <header>
     <h1>Report Olimpiadi Milano - Cortina</h1>
-    
-    <h2>Mappa degli Interventi</h2>
+    <h2>Analisi sintetica dello stato dei lavori infrastrutturali</h2>
     <p>
-      Esplora i progetti infrastrutturali legati alle Olimpiadi attraverso una mappa interattiva.
-      Ogni punto fornisce informazioni dettagliate sull’intervento, il suo stato di avanzamento e gli eventuali subappalti.
+      I dati presentati derivano dal <a class="link" href="https://www.simico.it/piano-delle-opere/" target="_blank">Piano delle opere di SIMICO S.p.a.</a>.  
+      Questo report mira a fornire una panoramica chiara e quantitativa sull’avanzamento dei progetti legati alle Olimpiadi invernali 2026.
     </p>
-    <a href="mappa_interventi.html" class="button">Entra nella mappa</a>
   </header>
 
+  <!-- Sezione statistiche chiave -->
+  <section class="stats-grid">
+    <div class="stat-box">
+      <div class="stat-value">98</div>
+      <div class="stat-label">Interventi totali</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">30%</div>
+      <div class="stat-label">In fase di progettazione</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">58%</div>
+      <div class="stat-label">In esecuzione</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">€ 3.44 Mld</div>
+      <div class="stat-label">Totale quadro economico stimato</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">€ 35.2 Mln</div>
+      <div class="stat-label">Importo medio per intervento</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">48%</div>
+      <div class="stat-label">Interventi con subappalto</div>
+    </div>
+  </section>
+
+  <section style="max-width:900px;">
+    <h2>Mappa degli Interventi</h2>
+    <p>
+      Esplora la mappa interattiva per consultare nel dettaglio ogni intervento.  
+      Cliccando sui punti potrai accedere alle relative schede descrittive e ai subappalti.
+    </p>
+    <a href="mappa_interventi.html" class="button">Apri la mappa</a>
+  </section>
+
   <footer>
-    2025 - Realizzato da <a href="https://github.com/Loremedde" target="_blank" style="color:inherit;text-decoration:underline;">Lorenzo Medde</a>
+    2025 — Realizzato da <a href="https://github.com/Loremedde" target="_blank" class="link">Lorenzo Medde</a>
   </footer>
 
 </body>
