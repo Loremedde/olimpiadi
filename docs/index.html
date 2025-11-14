@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Report dati Olimpiadi</title>
+  <title>Fonti - Olimpiadi Milano-Cortina 2026</title>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       background: #fafafa;
@@ -13,155 +15,155 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
+      padding: 2.5rem 1rem;
       text-align: center;
-      padding: 2rem 1rem;
+      line-height: 1.6;
     }
 
-    header {
+    .container {
       max-width: 900px;
-      margin-bottom: 2rem;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 0.7s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
       font-size: 2.3rem;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.3px;
     }
 
     h2 {
-      font-size: 1.3rem;
-      margin: 1.2rem 0 0.5rem;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-top: 2.4rem;
+      margin-bottom: 1rem;
       color: #333;
     }
 
-    p {
-      font-size: 1rem;
-      color: #555;
-      line-height: 1.6;
+    ul {
+      list-style: none;
+      padding-left: 0;
+      text-align: left;
+      margin: 0 auto;
+      max-width: 700px;
+    }
+
+    li {
       margin-bottom: 0.8rem;
+      font-size: 1.05rem;
+      padding-left: 1.3rem;
+      position: relative;
     }
 
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin: 2rem auto;
-      max-width: 900px;
-      width: 100%;
+    li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.2rem;
+      color: #111;
     }
 
-    .stat-box {
-      border: 2px solid #000;
-      background: #fff;
-      padding: 1.5rem 1rem;
-      border-radius: 6px;
-      transition: transform 0.2s ease;
-    }
-
-    .stat-box:hover {
-      transform: scale(1.02);
-    }
-
-    .stat-value {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 0.3rem;
-    }
-
-    .stat-label {
-      font-size: 0.95rem;
-      color: #444;
-    }
-
-    a.button {
-      display: inline-block;
+    p {
       margin-top: 2rem;
-      padding: 0.9rem 2.2rem;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      color: #444;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    a.link {
+      color: #0055aa;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: color 0.25s ease, border-bottom 0.25s ease;
+    }
+
+    a.link:hover {
+      color: #002d66;
+      border-bottom: 1px solid #002d66;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 3rem;
+      padding: 1rem 2.3rem;
       border: 2px solid #000;
+      font-size: 1.05rem;
+      font-weight: 600;
       color: #000;
       text-decoration: none;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 4px;
-      transition: all 0.25s ease;
+      border-radius: 5px;
+      transition: all .25s ease;
     }
 
-    a.button:hover {
+    .button:hover {
       background: #000;
       color: #fff;
+      transform: translateY(-2px);
     }
 
     footer {
       margin-top: 3rem;
-      font-size: 0.85rem;
-      color: #777;
+      font-size: 0.9rem;
+      color: #666;
     }
 
-    a.link {
-      color: inherit;
+    footer a {
+      color: #333;
       text-decoration: underline;
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
       h1 { font-size: 1.9rem; }
-      .stat-value { font-size: 1.6rem; }
-      body { padding: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      li { font-size: 1rem; }
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Report Olimpiadi Milano - Cortina</h1>
-    <h2>Analisi sintetica dello stato dei lavori infrastrutturali</h2>
-    <p>
-      I dati presentati derivano dal <a class="link" href="https://www.simico.it/piano-delle-opere/" target="_blank">Piano delle opere di SIMICO S.p.a.</a>.  
-      Questo report mira a fornire una panoramica chiara e quantitativa sull’avanzamento dei progetti legati alle Olimpiadi invernali 2026.
-    </p>
-  </header>
+  <div class="container">
 
-  <!-- Sezione statistiche chiave -->
-  <section class="stats-grid">
-    <div class="stat-box">
-      <div class="stat-value">98</div>
-      <div class="stat-label">Interventi totali</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-value">30%</div>
-      <div class="stat-label">In fase di progettazione</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-value">58%</div>
-      <div class="stat-label">In esecuzione</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-value">€ 3.44 Mld</div>
-      <div class="stat-label">Totale quadro economico stimato</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-value">€ 35.2 Mln</div>
-      <div class="stat-label">Importo medio per intervento</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-value">48%</div>
-      <div class="stat-label">Interventi con subappalto</div>
-    </div>
-  </section>
+    <h1>Fonti — Dati e Stato degli Interventi<br>Olimpiadi Milano-Cortina 2026</h1>
 
-  <section style="max-width:900px;">
-    <h2>Mappa degli Interventi</h2>
-    <p>
-      Esplora la mappa interattiva per consultare nel dettaglio ogni intervento.  
-      Cliccando sui punti potrai accedere alle relative schede descrittive e ai subappalti.
-    </p>
-    <a href="mappa_interventi.html" class="button">Apri la mappa</a>
-  </section>
+    <h2>Fonti dei dati</h2>
+    <ul>
+      <li><a class="link" href="https://www.simico.it/piano-delle-opere/" target="_blank">Piano delle opere — SIMICO S.p.A.</a></li>
+    </ul>
+
+    <h2>Articoli e approfondimenti</h2>
+    <ul>
+      <li><a class="link" href="https://altreconomia.it/milano-linchiesta-sullurbanistica-e-quellelefante-chiamato-olimpiadi-2026/" target="_blank">Milano, l’inchiesta sull’urbanistica e l’«elefante» Olimpiadi — Altreconomia</a></li>
+      <li><a class="link" href="https://altreconomia.it/gli-extra-costi-del-villaggio-olimpico-di-milano-e-limportanza-di-chiamarsi-coima/" target="_blank">Extra-costi del Villaggio Olimpico — Altreconomia</a></li>
+      <li><a class="link" href="https://www.libera.it/it-schede-2754-olimpiadi_milano_cortina_2026" target="_blank">Olimpiadi Milano-Cortina — Libera</a></li>
+    </ul>
+
+    <h2>Documenti consultati</h2>
+    <ul>
+      <li><a class="link" href="doc/Rapporto ANAC.pdf" target="_blank">Rapporto ANAC — criticità sulla nomina del commissario</a></li>
+      <li><a class="link" href="doc/rapporto-consumo-suolo-2025.pdf" target="_blank">Rapporto Consumo Suolo 2025 — SNPA/ISPRA</a></li>
+      <li><a class="link" href="doc/Documento-aggiuntivo-tavoli-regionali-MICO-26-SEG-AMB-6-2-23-2-2-w-1.pdf" target="_blank">Rapporto CAI — Documento aggiuntivo tavoli regionali</a></li>
+    </ul>
+
+
+    <a href="report.html" class="button">Apri il report statistico</a>
+
+  </div>
 
   <footer>
-    2025 — Realizzato da <a href="https://github.com/Loremedde" target="_blank" class="link">Lorenzo Medde</a>
+    2025 — Realizzato da <a href="https://github.com/Loremedde" target="_blank">Lorenzo Medde</a>
   </footer>
 
 </body>
